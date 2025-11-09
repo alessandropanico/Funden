@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { provideHttpClient, withFetch } from '@angular/common/http';
@@ -95,6 +96,7 @@ import { DeleteAccountComponent } from './pages/delete-account/delete-account.co
     MatTableModule,
     NgxPaginationModule,
     TopUpBalanceComponent,
+    ModalModule.forRoot(),
 
 ],
   providers: [

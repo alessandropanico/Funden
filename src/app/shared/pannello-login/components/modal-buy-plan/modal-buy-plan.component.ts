@@ -1,8 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
-
-import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { StripeService as Stripe } from 'ngx-stripe';
 import { ToastrService } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { PipesModule } from "../../../../models/pipes/pipes.module";
+import { ModalPayCongratPromptComponent } from '../modal-pay-congrat-prompt/modal-pay-congrat-prompt.component';
+import { BsModalService, BsModalRef, ModalModule } from 'ngx-bootstrap/modal';
 
 import { Balance } from '../../../../models/balance/balance.model';
 import { PlanArtist } from '../../../../models/plan/planArtist.model';
@@ -16,42 +19,34 @@ import { PromptsService } from '../../../../services/prompts.service';
 import { SharedInfoService } from '../../../../services/shared-info.service';
 import { Subscription } from 'rxjs';
 import { StripeService } from '../../../../services/stripe.service';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { PipesModule } from "../../../../models/pipes/pipes.module";
-import { ModalPayCongratPromptComponent } from '../modal-pay-congrat-prompt/modal-pay-congrat-prompt.component';
 
 @Component({
-    selector: 'app-modal-buy-plan',
-    templateUrl: './modal-buy-plan.component.html',
-    styleUrls: ['./modal-buy-plan.component.scss'],
-    imports: [CommonModule, FormsModule, PipesModule, ModalPayCongratPromptComponent]
+  selector: 'app-modal-buy-plan',
+  templateUrl: './modal-buy-plan.component.html',
+  styleUrls: ['./modal-buy-plan.component.scss'],
+  imports: [CommonModule, FormsModule, PipesModule, ModalPayCongratPromptComponent, ModalModule]
 })
 export class ModalBuyPlanComponent implements OnInit {
   @Input() plan: number = 1;
 
-  @ViewChild('modalPaymentPromtp') modalPaymentPromtp: ElementRef | undefined;
-
+  modalRef?: BsModalRef;
   payment: PaymentMethRequets = new PaymentMethRequets();
-
-  optionsModal: NgbModalOptions = { backdrop: 'static', keyboard: false };
-
   plansArtist: PlanArtist[] = [];
 
-  checkPayAvailable: boolean = false;
-  checkPayCreditDebit: boolean = false;
+  checkPayAvailable = false;
+  checkPayCreditDebit = false;
   balanceAmount: any = 0;
 
-  numberCard: string = '';
-  expCard: string = '' ;
-  nameCard: string = '';
-  cvcCard: string = '';
+  numberCard = '';
+  expCard = '';
+  nameCard = '';
+  cvcCard = '';
   emailPromtp = '';
-  email: string = '';
+  email = '';
   disableBtnPay = false;
   quantityPrompt = 0;
 
-  isLogedWatchSubscription: Subscription | undefined;
+  isLogedWatchSubscription?: Subscription;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -60,7 +55,7 @@ export class ModalBuyPlanComponent implements OnInit {
     private planService: PlanService,
     private stripeService: StripeService,
     private stripe: Stripe,
-    public ngbModal: NgbModal,
+    private modalService: BsModalService,
     private toastr: ToastrService,
     public sharedInfoService: SharedInfoService
   ) {}
@@ -76,15 +71,13 @@ export class ModalBuyPlanComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    if (this.isLogedWatchSubscription) {
-      this.isLogedWatchSubscription.unsubscribe();
-    }
+    this.isLogedWatchSubscription?.unsubscribe();
   }
 
   isLogedWatch() {
     this.isLogedWatchSubscription = this.sharedInfoService
       .isLogedWatch()
-      .subscribe((valor) => {
+      .subscribe(valor => {
         if (valor) {
           this.getPlansArtist();
           this.getBalance();
@@ -93,34 +86,32 @@ export class ModalBuyPlanComponent implements OnInit {
   }
 
   getPlansArtist() {
-    this.planService.getPlansArtist().subscribe((response) => {
+    this.planService.getPlansArtist().subscribe(response => {
       this.plansArtist = response.data;
     });
   }
 
   getBalance() {
-    this.balanceService.getBalance().subscribe((response) => {
+    this.balanceService.getBalance().subscribe(response => {
       this.balanceAmount = response.data.balanceAmount;
     });
   }
 
-  public isLoged(): boolean {
-    let isLoged = this.authenticationService.isLoged() || false;
-
-    if (isLoged) {
-      this.email = localStorage.getItem('email') || ''; // Default to empty string if null
-    }
-
-    return isLoged;
+  isLoged(): boolean {
+    const logged = this.authenticationService.isLoged() || false;
+    if (logged) this.email = localStorage.getItem('email') || '';
+    return logged;
   }
 
-  onBuyNow(plan: number, modal: any) {
-    this.plan = plan;
-    this.ngbModal.open(modal, this.optionsModal);
+  openModal() {
+    this.modalRef = this.modalService.show(this.constructor as any, {
+      class: 'modal-lg',
+      initialState: { plan: this.plan }
+    });
   }
 
-  closeModalPayPromtp(modal: any) {
-    this.ngbModal.dismissAll(modal);
+  closeModal() {
+    this.modalRef?.hide();
   }
 
   cleanFormPay() {
@@ -134,33 +125,25 @@ export class ModalBuyPlanComponent implements OnInit {
     this.disableBtnPay = false;
   }
 
-  finish(modal: any, modal_2: any) {
-    this.closeModalPayPromtp(modal);
+  finish() {
+    this.closeModal();
     this.cleanFormPay();
-    this.ngbModal.open(modal_2);
-    // this.toastr.success('Payment Successfully');
-    // this.toastr.success('Now you can block promtp');
-
+    this.modalRef = this.modalService.show(ModalPayCongratPromptComponent, { class: 'modal-lg' });
     this.getBalance();
   }
 
   validCheckPayAvailable() {
     return this.checkPayCreditDebit ||
-      parseFloat(this.balanceAmount) == 0 ||
-      parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE) >
-        parseFloat(this.balanceAmount)
-      ? true
-      : false;
+      parseFloat(this.balanceAmount) === 0 ||
+      parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE) > parseFloat(this.balanceAmount);
   }
 
-  createPaymentMeth(modal: any, form: { valid: any; }, modal_2: any) {
+  createPaymentMeth(form: { valid: any }) {
     if (this.checkPayAvailable) {
-      if (
-        parseFloat(this.balanceAmount) > 0 &&
-        parseFloat(this.balanceAmount) >=
-          parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE)
-      ) {
-        this.buyWithBalance(modal, modal_2);
+      if (parseFloat(this.balanceAmount) > 0 &&
+          parseFloat(this.balanceAmount) >= parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE)) {
+        this.buyWithBalance();
+        return;
       } else {
         this.toastr.error('Not have money');
         return;
@@ -171,8 +154,6 @@ export class ModalBuyPlanComponent implements OnInit {
     this.quantityPrompt = 0;
 
     if (this.checkPayCreditDebit && form.valid) {
-      let email = localStorage.getItem('email');
-      if (!email) email = '';
       this.payment = {
         number: this.numberCard,
         exp_month: this.expCard.substring(0, 2),
@@ -183,89 +164,44 @@ export class ModalBuyPlanComponent implements OnInit {
         phone: ''
       };
 
-      // Crear metodo de pago (verificar tarjeta)
-      this.stripeService.createPaymentMeth(this.payment).subscribe(
-        (response) => {
-          console.log('createPaymentMeth', response);
-          if (response.data.id) {
-            const payment: PaymentMethIntRequets = {
-              amount: parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE),
-              payment_method: response.data.id,
-            };
-            // Crear metodo de pago interno
-            this.stripeService.createPaymentMethInt(payment).subscribe(
-              (response) => {
-                // console.log('createPaymentMethInt', response);
-                // Validad datos de pago desde stripe
-                this.stripe
-                  .confirmCardPayment(response.data.client_secret)
-                  .subscribe(
-                    // this.stripe.confirmCardPayment(response.data.client_secret, {payment_method: response.data.payment_method}).subscribe(
-                    (response: any) => {
-                      // console.log('confirmCardPayment', response);
-                      if (response.error) {
-                        this.toastr.error('Payment error');
-                      } else {
-                        const balance: Balance = {
-                          movementAmount: parseFloat(
-                            this.plansArtist[this.plan].planDISCOUNTPRICE
-                          ),
-                          movementTYPE: 'RECHARGE',
-                        };
-                        // Agregar balance a la cuenta del usuario
-                        this.balanceService.addBalance(balance).subscribe(
-                          (response) => {
-                            // console.log('addBalance', response);
-
-                            this.buyWithBalance(modal, modal_2);
-                          },
-                          (error) => {}
-                        );
-                      }
-                    },
-                    (error) => {}
-                  );
-              },
-              (error) => {}
-            );
-          } else {
-            this.closeModalPayPromtp(modal);
-            this.toastr.error('Error Payment');
-          }
-        },
-        () => {}
-      );
-    } else {
+      this.stripeService.createPaymentMeth(this.payment).subscribe(response => {
+        if (response.data.id) {
+          const payment: PaymentMethIntRequets = {
+            amount: parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE),
+            payment_method: response.data.id
+          };
+          this.stripeService.createPaymentMethInt(payment).subscribe(resp => {
+            this.stripe.confirmCardPayment(resp.data.client_secret).subscribe(result => {
+              if (result.error) {
+                this.toastr.error('Payment error');
+              } else {
+                const balance: Balance = {
+                  movementAmount: parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE),
+                  movementTYPE: 'RECHARGE'
+                };
+                this.balanceService.addBalance(balance).subscribe(() => this.buyWithBalance());
+              }
+            });
+          });
+        } else {
+          this.closeModal();
+          this.toastr.error('Error Payment');
+        }
+      });
     }
   }
 
-  buyWithBalance(modal: any, modal_2: any) {
-    // comprar con balance
+  buyWithBalance() {
     const balance: Balance = {
       movementAmount: parseFloat(this.plansArtist[this.plan].planDISCOUNTPRICE),
-      movementTYPE: 'WITHDRAWAL',
+      movementTYPE: 'WITHDRAWAL'
     };
-    this.balanceService.buyWithBalance(balance).subscribe(
-      (response) => {
-        // console.log('buyWithBalance', response);
-        // Agregar promtp
-        this.quantityPrompt = parseInt(
-          this.plansArtist[this.plan].planQUANTITYPROMTP
-        );
-        const prompt: AddpromptRequest = {
-          promtp_availableQUANTITY: parseFloat(
-            this.plansArtist[this.plan].planQUANTITYPROMTP
-          ),
-        };
-        this.promptsService.addPrompt(prompt).subscribe(
-          (response) => {
-            // console.log('addPrompt', response);
-            this.finish(modal, modal_2);
-          },
-          (error) => {}
-        );
-      },
-      (error) => {}
-    );
+    this.balanceService.buyWithBalance(balance).subscribe(() => {
+      this.quantityPrompt = parseInt(this.plansArtist[this.plan].planQUANTITYPROMTP);
+      const prompt: AddpromptRequest = {
+        promtp_availableQUANTITY: parseFloat(this.plansArtist[this.plan].planQUANTITYPROMTP)
+      };
+      this.promptsService.addPrompt(prompt).subscribe(() => this.finish());
+    });
   }
 }

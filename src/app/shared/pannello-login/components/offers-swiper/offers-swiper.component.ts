@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { StripeService } from '../../../../services/stripe.service';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from '../../../../services/authentication.service';
@@ -10,24 +9,22 @@ import { BalanceService } from '../../../../services/balance.service';
 import { PromptsService } from '../../../../services/prompts.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsModalService, BsModalRef, ModalModule } from 'ngx-bootstrap/modal';
 
 @Component({
-    selector: 'app-offers-swiper',
-    templateUrl: './offers-swiper.component.html',
-    styleUrls: ['./offers-swiper.component.scss'],
-    imports: [ModalBuyPlanComponent, CommonModule, FormsModule]
+  selector: 'app-offers-swiper',
+  templateUrl: './offers-swiper.component.html',
+  styleUrls: ['./offers-swiper.component.scss'],
+  imports: [ModalBuyPlanComponent, CommonModule, FormsModule, ModalModule]
 })
 export class OffersSwiperComponent implements OnInit {
   @Input() activateOffers: boolean = false;
   @Output() propagar = new EventEmitter<boolean>();
 
-  @ViewChild(ModalBuyPlanComponent) modalBoyPlanComponent!: ModalBuyPlanComponent;
-
-  modalPaymentPromtp: any;
-  optionsModal: NgbModalOptions = { backdrop: 'static', keyboard: false };
-  @Input() plan!: number;  // Assicurati che 'plan' sia un numero (l'ID del piano)
+  @Input() plan!: number; // ID del piano selezionato
   currentIndex: number = 0;
+
+  modalRef?: BsModalRef; // riferimento al modal
 
   plansArtist: PlanArtist[] = [
     {
@@ -68,18 +65,12 @@ export class OffersSwiperComponent implements OnInit {
     private promptsService: PromptsService,
     private stripeService: StripeService,
     private stripe: Stripe,
-    public ngbModal: NgbModal,
+    private modalService: BsModalService, // sostituito NgbModal
     private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
     this.isLoged();
-  }
-
-  ngAfterViewInit(): void {
-    if (this.modalBoyPlanComponent) {
-      this.modalPaymentPromtp = this.modalBoyPlanComponent.modalPaymentPromtp;
-    }
   }
 
   public setActivateOffers(activateOffers: boolean): void {
@@ -88,15 +79,18 @@ export class OffersSwiperComponent implements OnInit {
   }
 
   public isLoged(): boolean {
-    let isLoged = this.authenticationService.isLoged() || false;
-    return isLoged;
+    return this.authenticationService.isLoged() || false;
   }
 
   onBuyNow(planIndex: number): void {
-    this.plan = this.plansArtist[planIndex].id;  // Passa solo l'ID del piano (number)
-    this.ngbModal.open(this.modalPaymentPromtp, this.optionsModal);
-  }
+    this.plan = this.plansArtist[planIndex].id; // ID piano
 
+    // Apri il modal con ngx-bootstrap
+    this.modalRef = this.modalService.show(ModalBuyPlanComponent, {
+      class: 'modal-lg',
+      initialState: { plan: this.plan } // usa "plan" come proprietà nel componente modal
+    });
+  }
 
   moveToPrev(): void {
     if (this.currentIndex === 0) {
