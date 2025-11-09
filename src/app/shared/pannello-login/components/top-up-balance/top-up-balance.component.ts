@@ -10,7 +10,6 @@ import {
 // import Swiper core and required modules
 import SwiperCore from 'swiper';
 import { Pagination } from 'swiper/modules';
-import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 import { AuthenticationService } from '../../../../services/authentication.service';
 import { BalanceService } from '../../../../services/balance.service';

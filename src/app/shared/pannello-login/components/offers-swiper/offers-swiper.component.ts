@@ -91,7 +91,7 @@ export class OffersSwiperComponent implements OnInit {
     let isLoged = this.authenticationService.isLoged() || false;
     return isLoged;
   }
-  
+
   onBuyNow(planIndex: number): void {
     this.plan = this.plansArtist[planIndex].id;  // Passa solo l'ID del piano (number)
     this.ngbModal.open(this.modalPaymentPromtp, this.optionsModal);
