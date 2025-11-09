@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
-  selector: 'app-top-up-credit',
-  templateUrl: './top-up-credit.component.html',
-  styleUrls: ['./top-up-credit.component.scss'],
-  standalone: true,
-  imports: [FormsModule, CommonModule]
+    selector: 'app-top-up-credit',
+    templateUrl: './top-up-credit.component.html',
+    styleUrls: ['./top-up-credit.component.scss'],
+    imports: [FormsModule, CommonModule]
 })
 export class TopUpCreditComponent implements OnInit {
   @Input() activatePaymenBalance = false;

@@ -3,9 +3,10 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit, ChangeDetectionStrateg
 import { SmsService } from '../../services/sms.service';
 
 @Component({
-  selector: 'app-timer',
-  templateUrl: './timer.component.html',
-  styleUrl: './timer.component.css'
+    selector: 'app-timer',
+    templateUrl: './timer.component.html',
+    styleUrl: './timer.component.css',
+    standalone: false
 })
 export class TimerComponent implements OnInit, OnDestroy {
 

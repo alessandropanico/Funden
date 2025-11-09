@@ -28,10 +28,10 @@ import { InviaCreditoComponent } from "../invia-credito/invia-credito.component"
 SwiperCore.use([Pagination]);
 
 @Component({
-  selector: 'app-top-up-balance',
-  templateUrl: './top-up-balance.component.html',
-  styleUrls: ['./top-up-balance.component.scss'],
-  animations: [
+    selector: 'app-top-up-balance',
+    templateUrl: './top-up-balance.component.html',
+    styleUrls: ['./top-up-balance.component.scss'],
+    animations: [
     /* trigger('fadeSlideInOut', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateX(200px)' }),
@@ -41,9 +41,8 @@ SwiperCore.use([Pagination]);
         animate('500ms', style({ opacity: 0, transform: 'translateX(200px)' })),
       ]),
     ]), */
-  ],
-  imports: [CommonModule, PromptsListComponent, OffersSwiperComponent, UniquesListComponent, TopUpCreditComponent, PipesModule, InviaCreditoComponent],
-  standalone: true
+    ],
+    imports: [CommonModule, PromptsListComponent, OffersSwiperComponent, UniquesListComponent, TopUpCreditComponent, PipesModule, InviaCreditoComponent]
 })
 export class TopUpBalanceComponent implements OnInit, AfterViewInit {
   @Input() showTopUpBalance = true;

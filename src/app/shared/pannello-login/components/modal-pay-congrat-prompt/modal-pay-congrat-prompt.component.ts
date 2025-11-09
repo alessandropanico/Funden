@@ -3,11 +3,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-modal-pay-congrat-prompt',
-  templateUrl: './modal-pay-congrat-prompt.component.html',
-  styleUrls: ['./modal-pay-congrat-prompt.component.scss'],
-  standalone:true,
-  imports: [CommonModule]
+    selector: 'app-modal-pay-congrat-prompt',
+    templateUrl: './modal-pay-congrat-prompt.component.html',
+    styleUrls: ['./modal-pay-congrat-prompt.component.scss'],
+    imports: [CommonModule]
 })
 export class ModalPayCongratPromptComponent implements OnInit {
 

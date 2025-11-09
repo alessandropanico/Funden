@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { UserSessionService } from '../../services/user-session.service';
 
 @Component({
-  selector: 'app-header-mobile',
-  templateUrl: './header-mobile.component.html',
-  styleUrl: './header-mobile.component.css'
+    selector: 'app-header-mobile',
+    templateUrl: './header-mobile.component.html',
+    styleUrl: './header-mobile.component.css',
+    standalone: false
 })
 export class HeaderMobileComponent {
 

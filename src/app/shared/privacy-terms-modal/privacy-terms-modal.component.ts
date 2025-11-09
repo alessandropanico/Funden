@@ -2,9 +2,10 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-privacy-terms-modal',
-  templateUrl: './privacy-terms-modal.component.html',
-  styleUrls: ['./privacy-terms-modal.component.css']
+    selector: 'app-privacy-terms-modal',
+    templateUrl: './privacy-terms-modal.component.html',
+    styleUrls: ['./privacy-terms-modal.component.css'],
+    standalone: false
 })
 export class PrivacyTermsModalComponent implements OnInit {
 

@@ -29,9 +29,10 @@ interface Slide {
 
 }
 @Component({
-  selector: 'app-slider-home-due',
-  templateUrl: './slider-home-due.component.html',
-  styleUrl: './slider-home-due.component.css'
+    selector: 'app-slider-home-due',
+    templateUrl: './slider-home-due.component.html',
+    styleUrl: './slider-home-due.component.css',
+    standalone: false
 })
 export class SliderHomeDueComponent implements OnInit, OnDestroy {
   slides: Slide[] = [];

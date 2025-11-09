@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { PhaseprivateloginService } from '../../services/phaseprivatelogin.service';
 
 @Component({
-  selector: 'app-congratulations',
-  templateUrl: './congratulations.component.html',
-  styleUrl: './congratulations.component.css'
+    selector: 'app-congratulations',
+    templateUrl: './congratulations.component.html',
+    styleUrl: './congratulations.component.css',
+    standalone: false
 })
 export class CongratulationsComponent {
 

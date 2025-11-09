@@ -97,11 +97,10 @@ const ELEMENT_DATA: Promtp[] = [
 ];
 
 @Component({
-  selector: 'app-prompts-list',
-  templateUrl: './prompts-list.component.html',
-  styleUrls: ['./prompts-list.component.scss'],
-  imports: [CommonModule, MatTableModule, NgxPaginationModule], // 👈 Aggiungi MatTableModule qui
-  standalone:true,
+    selector: 'app-prompts-list',
+    templateUrl: './prompts-list.component.html',
+    styleUrls: ['./prompts-list.component.scss'],
+    imports: [CommonModule, MatTableModule, NgxPaginationModule]
 })
 export class PromptsListComponent implements OnInit {
   @Input() activateOffers = false;

@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-projectsiqo',
-  templateUrl: './projectsiqo.component.html',
-  styleUrls: ['./projectsiqo.component.css']
+    selector: 'app-projectsiqo',
+    templateUrl: './projectsiqo.component.html',
+    styleUrls: ['./projectsiqo.component.css'],
+    standalone: false
 })
 export class ProjectsiqoComponent implements OnInit, OnDestroy {
   expiryRound1: string = '';

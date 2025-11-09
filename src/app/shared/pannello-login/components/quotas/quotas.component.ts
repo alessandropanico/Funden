@@ -127,9 +127,10 @@ export interface PaginationInstance {
 
 
 @Component({
-  selector: 'app-quotas',
-  templateUrl: './quotas.component.html',
-  styleUrl: './quotas.component.scss'
+    selector: 'app-quotas',
+    templateUrl: './quotas.component.html',
+    styleUrl: './quotas.component.scss',
+    standalone: false
 })
 export class QuotasComponent implements OnInit {
   @Input() activateOffers = false;

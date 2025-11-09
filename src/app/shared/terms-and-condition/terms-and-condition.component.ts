@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PhaseService } from '../../services/phase.service';
 
 @Component({
-  selector: 'app-terms-and-condition',
-  templateUrl: './terms-and-condition.component.html',
-  styleUrl: './terms-and-condition.component.css'
+    selector: 'app-terms-and-condition',
+    templateUrl: './terms-and-condition.component.html',
+    styleUrl: './terms-and-condition.component.css',
+    standalone: false
 })
 export class TermsAndConditionComponent implements OnInit {
 

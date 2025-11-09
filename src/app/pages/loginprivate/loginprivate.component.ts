@@ -16,9 +16,10 @@ import { Company } from '../../interfaces/company';
 import { UserSessionService } from '../../services/user-session.service';
 
 @Component({
-  selector: 'app-loginprivate',
-  templateUrl: './loginprivate.component.html',
-  styleUrl: './loginprivate.component.css'
+    selector: 'app-loginprivate',
+    templateUrl: './loginprivate.component.html',
+    styleUrl: './loginprivate.component.css',
+    standalone: false
 })
 export class LoginprivateComponent {
 

@@ -3,9 +3,10 @@ import { EmailService } from '../../services/email.service';
 import { EmailRequest } from '../../interfaces/email-request';
 
 @Component({
-  selector: 'app-contatti',
-  templateUrl: './contatti.component.html',
-  styleUrls: ['./contatti.component.css']
+    selector: 'app-contatti',
+    templateUrl: './contatti.component.html',
+    styleUrls: ['./contatti.component.css'],
+    standalone: false
 })
 export class ContattiComponent {
   constructor(private emailService: EmailService) {}

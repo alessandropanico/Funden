@@ -6,9 +6,10 @@ import { LoadingService } from '../../services/loading.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-access-pin',
-  templateUrl: './access-pin.component.html',
-  styleUrl: './access-pin.component.css'
+    selector: 'app-access-pin',
+    templateUrl: './access-pin.component.html',
+    styleUrl: './access-pin.component.css',
+    standalone: false
 })
 export class AccessPinComponent implements OnInit {
 

@@ -10,9 +10,10 @@ interface Slide {
 }
 
 @Component({
-  selector: 'app-slider-projec-details',
-  templateUrl: './slider-projec-details.component.html',
-  styleUrl: './slider-projec-details.component.css'
+    selector: 'app-slider-projec-details',
+    templateUrl: './slider-projec-details.component.html',
+    styleUrl: './slider-projec-details.component.css',
+    standalone: false
 })
 export class SliderProjecDetailsComponent implements OnInit, OnDestroy, AfterViewInit {
   slides: Slide[] = [];

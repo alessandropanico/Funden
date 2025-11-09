@@ -22,11 +22,10 @@ import { PipesModule } from "../../../../models/pipes/pipes.module";
 import { ModalPayCongratPromptComponent } from '../modal-pay-congrat-prompt/modal-pay-congrat-prompt.component';
 
 @Component({
-  selector: 'app-modal-buy-plan',
-  templateUrl: './modal-buy-plan.component.html',
-  styleUrls: ['./modal-buy-plan.component.scss'],
-  imports: [CommonModule, FormsModule, PipesModule, ModalPayCongratPromptComponent],
-  standalone: true
+    selector: 'app-modal-buy-plan',
+    templateUrl: './modal-buy-plan.component.html',
+    styleUrls: ['./modal-buy-plan.component.scss'],
+    imports: [CommonModule, FormsModule, PipesModule, ModalPayCongratPromptComponent]
 })
 export class ModalBuyPlanComponent implements OnInit {
   @Input() plan: number = 1;

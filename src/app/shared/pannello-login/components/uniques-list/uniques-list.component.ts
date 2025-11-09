@@ -96,11 +96,10 @@ const ELEMENT_DATA: Promtp[] = [
 ];
 
 @Component({
-  selector: 'app-uniques-list',
-  templateUrl: './uniques-list.component.html',
-  styleUrls: ['./uniques-list.component.scss'],
-  imports: [CommonModule, MatTableModule, NgxPaginationModule], // 👈 Aggiungi MatTableModule qui
-  standalone: true
+    selector: 'app-uniques-list',
+    templateUrl: './uniques-list.component.html',
+    styleUrls: ['./uniques-list.component.scss'],
+    imports: [CommonModule, MatTableModule, NgxPaginationModule]
 })
 export class UniquesListComponent implements OnInit {
   @Input() activateOffers = false;

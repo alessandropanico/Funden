@@ -3,9 +3,10 @@ import { PhaseService } from '../../services/phase.service';
 import { PhaseprivateloginService } from '../../services/phaseprivatelogin.service';
 
 @Component({
-  selector: 'app-pin-solo',
-  templateUrl: './pin-solo.component.html',
-  styleUrl: './pin-solo.component.css'
+    selector: 'app-pin-solo',
+    templateUrl: './pin-solo.component.html',
+    styleUrl: './pin-solo.component.css',
+    standalone: false
 })
 export class PinSoloComponent implements OnInit {
 

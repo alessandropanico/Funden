@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
-  selector: 'app-invia-credito',
-  templateUrl: './invia-credito.component.html',
-  styleUrls: ['./invia-credito.component.scss'],
-  standalone: true,
-  imports: [FormsModule, CommonModule]
+    selector: 'app-invia-credito',
+    templateUrl: './invia-credito.component.html',
+    styleUrls: ['./invia-credito.component.scss'],
+    imports: [FormsModule, CommonModule]
 })
 export class InviaCreditoComponent implements OnInit {
   @Input() activateInvia = false;

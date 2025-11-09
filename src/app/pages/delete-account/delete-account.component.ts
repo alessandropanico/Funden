@@ -3,9 +3,10 @@ import { EmailService } from '../../services/email.service';
 import { EmailRequest } from '../../interfaces/email-request';
 
 @Component({
-  selector: 'app-delete-account',
-  templateUrl: './delete-account.component.html',
-  styleUrls: ['./delete-account.component.css']
+    selector: 'app-delete-account',
+    templateUrl: './delete-account.component.html',
+    styleUrls: ['./delete-account.component.css'],
+    standalone: false
 })
 export class DeleteAccountComponent {
   constructor(private emailService: EmailService) {}

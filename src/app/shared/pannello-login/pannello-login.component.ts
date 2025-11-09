@@ -6,9 +6,10 @@ import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pannello-login',
-  templateUrl: './pannello-login.component.html',
-  styleUrl: './pannello-login.component.css'
+    selector: 'app-pannello-login',
+    templateUrl: './pannello-login.component.html',
+    styleUrl: './pannello-login.component.css',
+    standalone: false
 })
 export class PannelloLoginComponent implements OnInit {
   countryCode: string = '';

@@ -1,9 +1,10 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'app-discover-us',
-  templateUrl: './discover-us.component.html',
-  styleUrl: './discover-us.component.css'
+    selector: 'app-discover-us',
+    templateUrl: './discover-us.component.html',
+    styleUrl: './discover-us.component.css',
+    standalone: false
 })
 export class DiscoverUsComponent implements OnInit {
 

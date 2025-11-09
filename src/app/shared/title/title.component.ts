@@ -3,9 +3,10 @@ import { PhaseService } from '../../services/phase.service';
 import { PhaseprivateloginService } from '../../services/phaseprivatelogin.service';
 
 @Component({
-  selector: 'app-title',
-  templateUrl: './title.component.html',
-  styleUrl: './title.component.css'
+    selector: 'app-title',
+    templateUrl: './title.component.html',
+    styleUrl: './title.component.css',
+    standalone: false
 })
 export class TitleComponent {
 

@@ -13,11 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-offers-swiper',
-  templateUrl: './offers-swiper.component.html',
-  styleUrls: ['./offers-swiper.component.scss'],
-  imports: [ModalBuyPlanComponent, CommonModule, FormsModule],
-  standalone: true
+    selector: 'app-offers-swiper',
+    templateUrl: './offers-swiper.component.html',
+    styleUrls: ['./offers-swiper.component.scss'],
+    imports: [ModalBuyPlanComponent, CommonModule, FormsModule]
 })
 export class OffersSwiperComponent implements OnInit {
   @Input() activateOffers: boolean = false;

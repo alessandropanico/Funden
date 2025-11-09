@@ -14,9 +14,10 @@ import { PhaseprivateloginService } from '../../services/phaseprivatelogin.servi
 import { UserSessionService } from '../../services/user-session.service';
 
 @Component({
-  selector: 'app-registerprivate',
-  templateUrl: './registerprivate.component.html',
-  styleUrl: './registerprivate.component.css'
+    selector: 'app-registerprivate',
+    templateUrl: './registerprivate.component.html',
+    styleUrl: './registerprivate.component.css',
+    standalone: false
 })
 export class RegisterprivateComponent implements OnInit, OnDestroy {
 
