@@ -10,6 +10,7 @@ import { BalanceService } from '../../../../services/balance.service';
 import { PromptsService } from '../../../../services/prompts.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-offers-swiper',
