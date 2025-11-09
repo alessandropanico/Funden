@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1174.001" height="669" viewBox="0 0 1174.001 669">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7ace19"/>
+      <stop offset="1" stop-color="#e6f1e4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.492" y1="0.43" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#629c1f"/>
+      <stop offset="1" stop-color="#e6f1e4"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2851" data-name="Group 2851" transform="translate(-169 -2596)">
+    <g id="Rectangle_3241" data-name="Rectangle 3241" transform="translate(169 2596)" fill="#e6f1e4" stroke="#e6f1e4" stroke-width="1">
+      <rect width="1174" height="669" rx="52" stroke="none"/>
+      <rect x="0.5" y="0.5" width="1173" height="668" rx="51.5" fill="none"/>
+    </g>
+    <text id="APP_DEVELOPMENT" data-name="APP DEVELOPMENT" transform="translate(955 2765)" fill="#003009" font-size="20" font-family="OpenSans, Open Sans"><tspan x="0" y="21">app development</tspan></text>
+    <text id="TEAM_AND_BONUSES" data-name="TEAM AND BONUSES" transform="translate(955 2812)" fill="#003009" font-size="20" font-family="OpenSans, Open Sans"><tspan x="0" y="21">team and bonuses</tspan></text>
+    <text id="ROUND_BONUS" data-name="ROUND BONUS" transform="translate(955 2863)" fill="#003009" font-size="20" font-family="OpenSans, Open Sans"><tspan x="0" y="21">round bonus</tspan></text>
+    <text id="ROUND_BONUS-2" data-name="ROUND BONUS" transform="translate(955 2913)" fill="#003009" font-size="20" font-family="OpenSans, Open Sans"><tspan x="0" y="21">round bonus</tspan></text>
+    <text id="ROUND_BONUS-3" data-name="ROUND BONUS" transform="translate(955 2962)" fill="#003009" font-size="20" font-family="OpenSans, Open Sans"><tspan x="0" y="21">round bonus</tspan></text>
+    <rect id="Rectangle_3236" data-name="Rectangle 3236" width="44" height="45" rx="7" transform="translate(882 2752)" fill="#199c38"/>
+    <rect id="Rectangle_3237" data-name="Rectangle 3237" width="44" height="44" rx="7" transform="translate(882 2803)" fill="#5fab71"/>
+    <rect id="Rectangle_3238" data-name="Rectangle 3238" width="44" height="43" rx="7" transform="translate(882 2853)" fill="#83be40"/>
+    <rect id="Rectangle_3239" data-name="Rectangle 3239" width="44" height="44" rx="7" transform="translate(882 2902)" fill="#7ace19"/>
+    <rect id="Rectangle_3240" data-name="Rectangle 3240" width="44" height="43" rx="7" transform="translate(882 2954)" fill="#16bf3e"/>
+    <text id="_42_" data-name="42%" transform="translate(885 2781)" fill="#fff" font-size="16" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">42%</tspan></text>
+    <text id="_20_" data-name="20%" transform="translate(885 2829)" fill="#fff" font-size="16" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">20%</tspan></text>
+    <text id="_18_" data-name="18%" transform="translate(885 2880)" fill="#fff" font-size="16" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">18%</tspan></text>
+    <text id="_12_" data-name="12%" transform="translate(885 2930)" fill="#fff" font-size="16" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">12%</tspan></text>
+    <text id="_8_" data-name="8%" transform="translate(891 2979)" fill="#fff" font-size="16" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">8%</tspan></text>
+    <text id="Capital_usage" data-name="Capital usage" transform="translate(882 2720)" fill="#003009" font-size="29" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Capital usage</tspan></text>
+    <path id="Path_1922" data-name="Path 1922" d="M-13967.1,9730.424s206.749-135.781,437.406-46.42,285.51-35.978,345.987-41.781,149.084,125.339,237.69,107.931S-12802.558,9590-12802.558,9590v277.366s-5.625,29.012-45.007,25.53c-45.007,1.16-1085.077,1.16-1085.077,1.16s-40.787,8.123-41.49-39.457,0-121.855,0-121.855Z" transform="translate(14145.559 -6629.813)" opacity="0.84" fill="url(#linear-gradient)"/>
+    <path id="Path_1923" data-name="Path 1923" d="M-12802.827,9816.491s-83.888-184.385-177.667-134.551-134.275,146.18-240.841,121.262-98.043-151.163-172.641-147.841-136.4,102.991-270.678,86.379-228.054-81.4-264.287-86.379S-13976,9649-13976,9649v227.491s2.11,26.313,37.277,26.861,1093.7,0,1093.7,0,37.276,3.289,42.2-25.765c-.7-29.053,0-61.1,0-61.1" transform="translate(14145.828 -6640.033)" opacity="0.51" fill="url(#linear-gradient-2)"/>
+    <g id="Group_2839" data-name="Group 2839" transform="translate(213.116 2632.992)">
+      <circle id="Ellipse_362" data-name="Ellipse 362" cx="280.524" cy="280.524" r="280.524" transform="translate(21.018 32.404)" fill="#015010"/>
+      <g id="Ellipse_363" data-name="Ellipse 363" transform="translate(0.65 0.308)" fill="#aab1b9" stroke="#707070" stroke-width="1">
+        <circle cx="280.524" cy="280.524" r="280.524" stroke="none"/>
+        <circle cx="280.524" cy="280.524" r="280.024" fill="none"/>
+      </g>
+      <path id="Path_1913" data-name="Path 1913" d="M-10763.5,10235.5v305.4l140.415,217.071s186.262-91.316,130.85-317.247c-.858-3.5-31.786-101.841-109.864-153.378-66.659-51.537-161.4-51.846-161.4-51.846" transform="translate(11044.674 -10235.5)" fill="#199c38"/>
+      <path id="Path_1914" data-name="Path 1914" d="M-10763.5,10704.645v254.909a282.165,282.165,0,0,0,46.188-3.705c25.182-4.107,55.011-12.8,74.478-23.041,6.816-3.584,16.582-7.335,19.75-11.933-24.688-47.319-140.415-260.876-140.415-260.876Z" transform="translate(11044.674 -10397.992)" fill="#16bf3e"/>
+      <path id="Path_1915" data-name="Path 1915" d="M-10933.647,10498.21l-274.353-37.032s34.357-213.97,274.353-223.846C-10933.135,10322.92-10933.647,10498.21-10933.647,10498.21Z" transform="translate(11214.822 -10236.201)" fill="#5fab71"/>
+      <path id="Path_1916" data-name="Path 1916" d="M-10889.755,10960.064s-120.46,2.469-203.578-87.233c70.775-64.19,203.578-211.5,203.578-211.5Z" transform="translate(11170.931 -10398.504)" fill="#7ace19"/>
+      <path id="Path_1917" data-name="Path 1917" d="M-11212.23,10597.333s-39.5,119.638,71.6,251.311c27.11-26.769,68.772-68.088,105.853-107.087,52.141-54.843,97.212-105.235,97.212-105.235Z" transform="translate(11219.053 -10374.005)" fill="#83be40"/>
+      <text id="_42_2" data-name="42%" transform="translate(351.228 262.63)" fill="#fff" font-size="47" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">42%</tspan></text>
+      <text id="_8_2" data-name="8%" transform="translate(301.851 490.382)" fill="#fff" font-size="47" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">8%</tspan></text>
+      <text id="_20_2" data-name="20%" transform="translate(151.25 181.775)" fill="#fff" font-size="47" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">20%</tspan></text>
+      <text id="_18_2" data-name="18%" transform="translate(82.122 328.672)" fill="#fff" font-size="47" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">18%</tspan></text>
+      <text id="_12_2" data-name="12%" transform="translate(156.805 456.435)" fill="#fff" font-size="47" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">12%</tspan></text>
+    </g>
+  </g>
+</svg>

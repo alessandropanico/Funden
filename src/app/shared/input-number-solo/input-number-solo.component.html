@@ -1,0 +1,37 @@
+<section class="inputSection">
+  <div class="nTel">Phone number</div>
+  <div class="input-group select-wrapper">
+
+
+    <!-- <select class="form-select prefix-select" id="prefixSelect" [(ngModel)]="localPrefix" (change)="updateFlag()"
+      [ngStyle]="{'background-image': 'url(' + selectedFlag + ')'}" [disabled]="inputNone">
+
+      <option *ngFor="let country of countries" [value]="country.prefix" [attr.data-flag]="country.flag">
+        {{ country.prefix }}
+      </option>
+
+
+    </select> -->
+
+    <select class="form-select prefix-select" id="prefixSelect" [(ngModel)]="localPrefix" (change)="updateFlag()"
+      [ngStyle]="{'background-image': 'url(' + selectedFlag + ')'}" [disabled]="inputNone">
+
+      <option value="+39" data-flag="assets/immaginiGenerali/immaginiBandiere/it.jpg">+39</option>
+      <option value="+34" data-flag="assets/immaginiGenerali/immaginiBandiere/es.jpg">+34</option>
+      <option value="+351" data-flag="assets/immaginiGenerali/immaginiBandiere/pt.jpg">+351</option>
+      <option value="+33" data-flag="assets/immaginiGenerali/immaginiBandiere/fr.jpg">+33</option>
+      <option value="+40" data-flag="assets/immaginiGenerali/immaginiBandiere/ro.jpg">+40</option>
+
+    </select>
+
+
+
+    <input type="number" class="form-control" aria-label="Inserisci il numero di telefono"
+      [(ngModel)]="localPhoneNumber" (input)="checkInput()" placeholder="insert your phone number here"
+      [disabled]="inputNone">
+    <div class="linea"></div>
+
+    <img src="assets/immaginiGenerali/polygon.png" class="polygon">
+
+  </div>
+</section>

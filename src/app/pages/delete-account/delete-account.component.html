@@ -1,0 +1,54 @@
+<div class="contHeader">
+  <app-header></app-header>
+</div>
+
+<div class="container">
+  <div class="glob">
+    <h1>Delete Account</h1>
+
+    <form class="myForm" (ngSubmit)="requestAccountDeletion()" #form="ngForm">
+      <div class="descForm">
+        Please note that your account will be deleted within 48 hours of your request to give us time to check for any
+        negative balances or outstanding issues on your account.
+      </div>
+
+      <div class="contForm">
+
+        <label class="myLabel" for="telephone">Telephone Number</label>
+        <input
+          id="telephone"
+          name="telephone"
+          class="myInput"
+          type="tel"
+          placeholder="Telephone Number"
+          [(ngModel)]="formData.telephone"
+          required
+        />
+
+        <label class="myLabel" for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          class="myInput"
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="formData.email"
+          required
+        />
+
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+
+        <button
+          class="btnDelete"
+          type="submit"
+          [disabled]="!form.valid || isLoading"
+        >
+          {{ isLoading ? 'Processing...' : 'Delete Account' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

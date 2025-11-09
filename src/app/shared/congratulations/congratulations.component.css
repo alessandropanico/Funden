@@ -1,0 +1,104 @@
+.sectionCong {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contCong {
+  border-radius: 50%;
+  background-color: #223D7F;
+  width: min(16vh, 8vw);
+  height: min(16vh, 8vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cong {
+  width: 5vw;
+  height: auto;
+}
+
+.titoloCong {
+  font-size: 1.667vw;
+  color: black;
+  margin-top: 4.722vh;
+  text-align: center;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.descCong {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 0.833vw;
+  color: black;
+  margin-top: 1.296vh;
+  font-weight: 500;
+}
+
+.buttonCong {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 20.938vw;
+  height: 8.667vh;
+  margin-top: 6.381vh;
+  padding: 1vw;
+  border: none;
+  border-radius: 3vw;
+  background-color: #223D7F;
+  color: white;
+  font-size: 1vw;
+  text-decoration: none;
+  text-align: center;
+}
+
+@media screen and (max-width:600px) {
+
+  .contCong {
+    border-radius: 50%;
+    background-color: #223D7F;
+    width: 30vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15vh;
+  }
+
+  .cong {
+    width: 18vw;
+    height: auto;
+  }
+
+  .titoloCong {
+    font-size: 8vw;
+    color: black;
+    margin-top: 5.336vh;
+    text-align: center;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .descCong {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 5vw;
+    color: black;
+    margin-top: 2.204vh;
+    font-weight: 500;
+  }
+
+  .buttonCong {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 87.923vw;
+    height: 7.541vh;
+    margin-top: 6.381vh;
+    padding: 1vw;
+    border: none;
+    border-radius: 9vw;
+    background-color: #223D7F;
+    color: white;
+    font-size: 5vw;
+
+  }
+}

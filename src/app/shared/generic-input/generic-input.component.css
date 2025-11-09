@@ -1,0 +1,110 @@
+.community {
+  font-size: 0.781vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-group {
+  position: relative;
+  width: 23.906vw;
+  height: 6.374vh;
+  font-size: 1.042vw;
+  z-index: 10;
+}
+
+.input-group-addon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2.083vw;
+  /* Regola la larghezza dell'icona */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.receive-code {
+  position: absolute;
+  top: 50%;
+  margin-left: -5vw;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #FF8000;
+  text-decoration: underline;
+  text-decoration: none;
+  font-size: 0.938vw;
+  z-index: 9999;
+
+}
+
+.form-control {
+  border-radius: 0.573vw !important;
+  border-top-right-radius: 0.573vw !important;
+  border-bottom-right-radius: 0.573vw !important;
+}
+
+.form-control:focus {
+  border-color: #ccc;
+  /* Colore del bordo grigio */
+  outline: none;
+  box-shadow: none;
+}
+
+.input-group:focus-within .receive-code {
+  display: block;
+}
+
+.lock {
+  display: block;
+  /* Visualizza sempre l'immagine del lucchetto */
+  position: absolute;
+  z-index: 9999;
+  width: 0.938vw;
+  height: 2.198vh;
+}
+
+.input-group:focus-within .input-group-addon img {
+  display: block;
+}
+
+@media screen and (max-width:600px) {
+
+  .input-group {
+    width: 87.923vw;
+    height: 5.425vh;
+    font-size: 3.865vw;
+  }
+
+  .form-control {
+    border-radius: 3vw !important;
+  }
+
+  .receive-code {
+    font-size: 3.865vw;
+    right: 2vw;
+  }
+
+  .community {
+    font-size: 2.899vw;
+
+  }
+
+  .input-group-addon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30vw;
+    /* Regola la larghezza dell'icona */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lock {
+    right: 3vw;
+    width: 4vw;
+    height: 2.5vh;
+  }
+
+}

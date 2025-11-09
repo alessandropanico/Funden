@@ -1,0 +1,136 @@
+/* Definisci l'animazione fadeInUp */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aggiungi animazione agli elementi con classe wow e fadeInUp */
+.wow.fadeInUp {
+  opacity: 0;
+  /* Inizia invisibile */
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Gestisci il ritardo dinamico con gli attributi data-wow-delay */
+.wow.fadeInUp[data-wow-delay="0.3s"] {
+  animation-delay: 0.3s;
+}
+
+.wow.fadeInUp[data-wow-delay="0.4s"] {
+  animation-delay: 0.4s;
+}
+
+.wow.fadeInUp[data-wow-delay="0.5s"] {
+  animation-delay: 0.5s;
+}
+
+/* Definisci l'animazione fadeInLeft */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aggiungi animazione agli elementi con classe wow e fadeInLeft */
+.wow.fadeInLeft {
+  opacity: 0;
+  /* Inizia invisibile */
+  animation: fadeInLeft 0.5s ease-out forwards;
+}
+
+/* Definisci l'animazione fadeInRight */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aggiungi animazione agli elementi con classe wow e fadeInRight */
+.wow.fadeInRight {
+  opacity: 0;
+  /* Inizia invisibile */
+  animation: fadeInRight 0.5s ease-out forwards;
+}
+
+/* Gestisci il ritardo dinamico per fadeInLeft */
+.wow.fadeInLeft[data-wow-delay="0.6s"] {
+  animation-delay: 0.6s;
+}
+
+/* Gestisci il ritardo dinamico per fadeInRight */
+.wow.fadeInRight[data-wow-delay="0.7s"] {
+  animation-delay: 0.7s;
+}
+
+/* Impostazione per le immagini quando entrano nel viewport */
+.hero-img img {
+  opacity: 0;
+  /* Inizia invisibile */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Attivare l'animazione quando l'elemento è visibile nel viewport */
+.hero-img.is-visible img {
+  opacity: 1;
+  /* Rende visibile l'immagine */
+  transform: translateY(0);
+  /* Anima il movimento */
+}
+
+/* Opzione per immagini con fadeInLeft */
+.hero-img.fancy-bottom.is-visible img {
+  animation: fadeInLeft 0.5s ease-out forwards;
+}
+
+/* Opzione per immagini con fadeInRight */
+.hero-img.fancy-top.is-visible img {
+  animation: fadeInRight 0.5s ease-out forwards;
+}
+
+.fa-plus {
+  font-weight: bolder;
+}
+
+.subtitle {
+  font-size: 16px;
+
+  color: #676767;
+}
+
+.pers{
+  color:#41B74F !important;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.counter-section-one{
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.count {
+  font-family: 'Roboto', sans-serif !important;
+
+}
+
+.suffix{
+  font-family: 'Roboto', sans-serif !important;
+}

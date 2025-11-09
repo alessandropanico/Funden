@@ -1,0 +1,28 @@
+<div class="modal-content modal-payment">
+    <div class="modal-body modal-payment-body">
+        <i (click)="closeModal(modal)"class="mdi mdi-close pointer icon-close-modal"></i>
+        <div class="center-item">
+            <img src="assets/images/icon.png" class="img-modal-icon">
+        </div>
+        <div class="center-item m-t-20">
+            <i class="mdi mdi-check-all text-success" style="font-size: 60px;"></i>
+        </div>
+        <p class="text-center">titolo</p>
+        <div class="center-item">
+            <img src="assets/images/torial.png" class="img-modal-icon-2">
+        </div>
+        <div class="m-t-15">
+            <p *ngIf="plan === 0" class="text-modal-paymnet">1 <label class="text-primary"><b>{{prompt}}</b></label><p>
+            <p *ngIf="plan > 0" class="text-modal-paymnet">2 <label class="text-primary"><b>{{plan}} prompts pack</b></label></p>
+            <p class="text-modal-paymnet m-t--25">3</p>
+            <p *ngIf="plan > 0" class="text-modal-paymnet  m-t--15">4</p>
+        </div>
+        <div class="p-l-40 p-r-40 m-t-20 m-b-50">
+            <p class="text-primary text-center">5</p>
+            <p class="text-modal-paymnet" style="margin-top: -15px;">6</p>
+            <div class="text-center" style="margin-top: 80px;">
+                <button (click)="closeModal(modal)" class="btn btn-primary btn-continue">7</button>
+            </div>
+        </div>
+    </div>
+  </div>

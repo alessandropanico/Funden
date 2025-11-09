@@ -1,0 +1,93 @@
+<div class="panel-slide-right text-center" *ngIf="showTopUpBalance">
+
+  <div *ngIf="!showLogout">
+    <div class="head">
+      <a href="javascript:void(0)" class="thm-btn header__btn scroll-to-target v-p-5px" *ngIf="isLoged()"
+        (click)="setShowTopUpBalance()">{{ email }}</a>
+      <i class="icon-log-out cursor-pointer" (click)="showLogout = true"></i>
+    </div>
+
+    <div class="contVoci">
+      <div class="tab-item">
+        <a [ngClass]="{'active-tab': tab === 'Prompts'}" (click)="tab='Prompts'" href="javascript:void(0)">Quotas</a>
+      </div>
+
+       <div class="separator">|</div>
+
+      <div class="tab-item">
+        <a [ngClass]="{'active-tab': tab === 'Uniques'}" (click)="tab='Uniques'" href="javascript:void(0)">Green
+          Quotas</a>
+      </div>
+    </div>
+
+
+
+    <section class="spazio2">
+      <div class="content-table mt-10px">
+        <div *ngIf="tab === 'Prompts'">
+          <app-prompts-list (propagar)="setActivateOffers(activateOffers)" *ngIf="!activateOffers"></app-prompts-list>
+
+          <div *ngIf="activateOffers" class="pt-10px">
+            <app-offers-swiper [activateOffers]="activateOffers"
+              (propagar)="setActivateOffers(activateOffers)"></app-offers-swiper>
+          </div>
+        </div>
+        <div *ngIf="tab === 'Uniques'">
+          <app-uniques-list></app-uniques-list>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-dashed color-blue mt-30px">
+      <div class="a-secundary font-size-16px">
+        ATM
+      </div>
+
+      <div class="color-black mt-5px font-size-20px bold">
+        {{ atm === 0 ? '0.00' : atm }}€
+      </div>
+
+      <div class="contButton">
+      <button class="thm-btn cta-three__btn mt-20px spazio" (click)="setActivatePaymenBalance(activatePaymenBalance)"
+        type="submit">
+        Ricarica
+      </button>
+
+      <button class="thm-btn cta-three__btn mt-20px spazio" (click)="setActivateactivateInvia(activateInvia)"
+        type="submit">
+        Invia
+      </button>
+    </div>
+
+    </div>
+
+    <div class="content-payment-balance" *ngIf="activatePaymenBalance">
+      <app-top-up-credit [activatePaymenBalance]="activatePaymenBalance"
+        (propagar)="setActivatePaymenBalance(activatePaymenBalance)"></app-top-up-credit>
+    </div>
+
+    <div class="content-payment-balance" *ngIf="activateInvia">
+      <app-invia-credito [activateInvia]="activateInvia"
+        (propagar)="setActivateactivateInvia(activateInvia)"></app-invia-credito>
+    </div>
+
+    <div class="content-dashed color-green mt-30px pt-10px">
+      <div class="a-secundary font-size-16px">
+        INVESTMENT
+      </div>
+
+      <div class="color-black mt--10px font-size-20px bold">
+        {{ investmentValue === 0 ? '0.00' : investmentValue }} NIK
+      </div>
+
+      <!-- <div class="a-secundary font-size-16px mt-10px">
+        Equivalente in euro: 0.00 €
+      </div> -->
+
+      <button class="thm-btn cta-three__btn mt-0px" type="submit">Invest now</button>
+    </div>
+
+
+
+  </div>
+</div>

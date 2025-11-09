@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1894" height="357.514" viewBox="0 0 1894 357.514">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.934" y1="0.5" x2="0.064" y2="0.638" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a0ff4c"/>
+      <stop offset="1" stop-color="#3ceefa"/>
+    </linearGradient>
+  </defs>
+  <path id="Tracciato_2038" data-name="Tracciato 2038" d="M0,0H1894V357.514H0Z" fill="url(#linear-gradient)"/>
+</svg>

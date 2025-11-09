@@ -1,0 +1,23 @@
+<section class="codeVerification">
+  <div class="d-flex justify-content-center">
+    <div class="cont2">
+      <div class="cod">Verification code</div>
+      <div class="row">
+        <ng-container *ngFor="let digit of [1, 2, 3, 4, 5, 6]; let i = index">
+          <div class="col">
+            <input
+              type="text"
+              class="verification-code form-control text-center"
+              [(ngModel)]="verificationCode[i]"
+              (input)="onVerificationCodeInput($event, i)"
+              (keydown)="onVerificationCodeKeyDown($event, i)"
+              [maxlength]="1"
+              [id]="'inputMIO_' + i + '_' + uniqueId"
+              (paste)="onPaste($event, i)"
+              (click)="clearVerificationBox(i)">
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<!--Registrazione privato-->
+<section *ngIf="phasePin!==1 && phasePin!==2  && phasePin!==3">
+
+  <button *ngIf="phase==1" class="myButton" [disabled]="!continueButton" (click)="step1()">Next</button>
+
+  <button *ngIf="phase==2" class="myButton" [disabled]="!continueButton" (click)="incrementPhase()">Next</button>
+
+  <button *ngIf="phase==3" class="myButton" [disabled]="!continueButton" (click)="registration()">Next</button>
+
+</section>
+<!------------------------>
+<!--Login privato-->
+
+
+<button *ngIf="phaseLoginP==1 && phase!==1 && phasePin!==1 && phasePin!==2" class="myButton"
+  [disabled]="!continueButton" (click)="verificationNumber()">Next</button>
+
+<button *ngIf="phaseLoginP==2 && phase!==1 && phase!==2 && phase!==3 && phasePin!==1 && phasePin!==2" class="myButton"
+  [disabled]="!buttonLogin" (click)="loginPrivato()">Login</button>
+
+
+<!------------------------>
+<!--Recuper PIN-->
+
+<section *ngIf="phaseLoginP!==1">
+
+  <button *ngIf="phasePin==1" class="myButton" [disabled]="!continueButton" (click)="passo1Pin()">Next</button>
+
+  <button *ngIf="phasePin==2" class="myButton" [disabled]="!buttonPin" (click)="confermaPin()" >Next</button>
+
+</section>

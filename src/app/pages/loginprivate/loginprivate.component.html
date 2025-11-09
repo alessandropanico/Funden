@@ -1,0 +1,74 @@
+<div class="mobile">
+  <app-header-mobile></app-header-mobile>
+</div>
+
+<div class="contGlob">
+  <div class="contenitoreLogin">
+
+    <div class="desktop">
+      <div class="contBack" (click)="goTo()">
+        <div class="bordoBack">
+          <img src="assets/immaginiGenerali/back.png" class="back" (click)="goTo()">
+        </div>
+
+        <div class="textBack">
+          go to Home
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="title" *ngIf="phaseLoginP==1 || phaseLoginP==2 && phasePin!==3">
+      <app-title></app-title>
+    </div>
+
+
+    <div class="numberSolo" *ngIf="phaseLoginP==1 || phaseLoginP==2 && phasePin!==3">
+      <app-input-number-solo></app-input-number-solo>
+    </div>
+
+
+    <div class="pin" *ngIf="phaseLoginP==2">
+      <app-pin-solo></app-pin-solo>
+    </div>
+
+
+    <div class="access" *ngIf="phaseLoginP==2 && phasePin!==1 && phasePin!==2 && phasePin!==3">
+      <app-access-pin></app-access-pin>
+    </div>
+
+
+    <div class="verification" *ngIf="phasePin==1">
+      <app-verification-code-solo [uniqueId]="uniqueId"
+        (codeEntered)="verifySmsCodePIN($event)"></app-verification-code-solo>
+    </div>
+
+
+    <div class="timer" *ngIf="phasePin==1">
+      <app-timer></app-timer>
+    </div>
+
+
+
+    <div class="button" *ngIf="phaseLoginP==1 || phaseLoginP==2 && phasePin!==3">
+      <app-button></app-button>
+    </div>
+
+    <div class="cong" *ngIf="phasePin==3">
+      <app-congratulations></app-congratulations>
+    </div>
+
+  </div>
+
+
+  <div class="desktop" *ngIf="!loginImm">
+    <img src="assets/immaginiGenerali/unikalogin.png" class="imgLogin">
+  </div>
+
+  <div class="desktop" *ngIf="pinImm">
+    <img src="assets/immaginiGenerali/unikarecuperapin.png" class="imgLogin">
+  </div>
+
+
+</div>

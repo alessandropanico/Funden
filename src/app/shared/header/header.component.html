@@ -1,0 +1,309 @@
+<!-- Header originale -->
+<header class="site-header header-original">
+  <div class="navbar-wrapper">
+    <div class="container">
+      <div class="navbar-inner">
+
+
+
+        <div class="site-logo">
+          <a routerLink="/home">
+            <img src="assets/immaginiGenerali/logounika2.png" alt="FundenHeader">
+          </a>
+        </div>
+
+
+        <!-- Menu principale -->
+        <div class="nav-menu menu____" [class.hidden-mobile]="isMobile">
+          <ul>
+            <!-- <li class="current">
+              <a href="#">Discover us<span class="dd-trigger"><i class="fa-solid fa-angle-down"></i></span></a>
+              <ul class="submenu">
+                <li><a href="/">Home One</a></li>
+                <li><a href="/index-2">Home Two</a></li>
+              </ul>
+            </li> -->
+            <li>
+              <a routerLink="/discoverus" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Discover us</a>
+            </li>
+            <li>
+              <a routerLink="/projectsiqo" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Projects IQO</a>
+            </li>
+            <!-- <li>
+              <a href="#">Projects IQO<span class="dd-trigger"><i class="fa-solid fa-angle-down"></i></span></a>
+              <ul class="submenu">
+                <li><a href="/project-1">Project One</a></li>
+                <li><a href="/project-2">Project Two</a></li>
+                <li><a href="/project-3">Project Three</a></li>
+                <li><a href="/project-details">Project Details</a></li>
+              </ul>
+            </li> -->
+            <li><a routerLink="/company" routerLinkActive="active-link">Revenue</a></li>
+            <!-- <li>
+              <a href="#">Trade<span class="dd-trigger"><i class="fa-solid fa-angle-down"></i></span></a>
+              <ul class="submenu">
+                <li><a href="/news-standard">News Standard</a></li>
+                <li><a href="/news-details">News Details</a></li>
+              </ul>
+            </li> -->
+            <li><a class="pers" (click)="openModal()">Exchange</a></li>
+
+            <!-- <li>
+              <a href="#">Accademy<span class="dd-trigger"><i class="fa-solid fa-angle-down"></i></span></a>
+              <ul class="submenu">
+                <li><a href="/about">About</a></li>
+                <li><a href="/company-overview">Company Overview</a></li>
+                <li><a href="/team-member">Team Member</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/testimonial">Testimonial</a></li>
+                <li><a href="/faq">FAQ</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a routerLink="/events" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Events</a>
+            </li> -->
+            <li>
+              <a routerLink="/contatti" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Contact us</a>
+            </li>
+
+          </ul>
+        </div>
+
+
+        <!----------------------------------------->
+        <!--SEZIONE BOTTONE LOGIN/UTENTE-->
+
+        <!-- Usa [hidden] invece di *ngIf per evitare flickering -->
+        <div class="contButt">
+          <button class="thm-btn" (click)="handleAuthAction()" [hidden]="isLoggedIn">
+            {{ buttonText }}
+          </button>
+
+          <button class="thm-btn" (click)="showPannello()" [hidden]="!isLoggedIn">
+            {{ phonePrefix }} {{ phoneNumber }}
+          </button>
+
+          <div *ngIf="isLoggedIn">
+            <app-pannello-login *ngIf="pannello"></app-pannello-login>
+          </div>
+        </div>
+
+        <!----------------------------------------->
+
+
+        <div class="navbars-extra d-flex align-items-center">
+          <a href="#" class="nav-togglers" [class.open]="isMenuOpen" (click)="toggleMenu($event)">
+            <span></span><span></span><span></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<!----------------------------------------------------------------------------------------->
+
+
+<!-- Header sticky -->
+<header *ngIf="!isMobile" class="site-header header-sticky"
+  [ngClass]="{ 'header-sticky-visible': isScrolled, 'header-sticky-hidden': !isScrolled }">
+  <div class="navbar-wrapper">
+    <div class="container">
+      <div class="navbar-inner">
+        <div class="site-logo">
+          <a routerLink="/home">
+            <img src="assets/immaginiGenerali/logounika2.png" alt="FundenHeader">
+          </a>
+        </div>
+        <!-- Menu principale (visibile solo su desktop) -->
+        <div class="nav-menu menu____">
+          <ul>
+            <!-- <li class="current">
+              <a href="#">Discover us<span class="dd-trigger"><i class="fa-solid fa-angle-down"></i></span></a>
+              <ul class="submenu">
+                <li><a href="/">Home One</a></li>
+                <li><a href="/index-2">Home Two</a></li>
+              </ul>
+            </li> -->
+
+            <li>
+              <a routerLink="/discoverus" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Discover us</a>
+            </li>
+
+
+            <li>
+              <a routerLink="/projectsiqo" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Projects IQO</a>
+            </li>
+            <li><a routerLink="/company" routerLinkActive="active-link">Revenue</a></li>
+            <li><a class="pers" (click)="openModal()">Exchange</a></li>
+            <!-- <li>
+              <a href="#">Accademy<span class="dd-trigger"><i class="fa-solid fa-angle-down"></i></span></a>
+              <ul class="submenu">
+                <li><a href="/about">About</a></li>
+                <li><a href="/company-overview">Company Overview</a></li>
+                <li><a href="/team-member">Team Member</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/testimonial">Testimonial</a></li>
+                <li><a href="/faq">FAQ</a></li>
+              </ul>
+            </li>
+            <li>
+              <a routerLink="/events" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Events</a>
+            </li> -->
+            <li>
+              <a routerLink="/contatti" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">Contact us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!----------------------------------------->
+        <!--SEZIONE BOTTONE LOGIN/UTENTE STICKY-->
+
+        <button _ngcontent-vqu-c90="" class="thm-btn header__btn scroll-to-target boton-sesion ng-star-inserted"
+          (click)="handleAuthAction()" [hidden]="isLoggedIn">
+          {{ buttonText }}
+        </button>
+
+        <button _ngcontent-vqu-c90="" class="thm-btn header__btn scroll-to-target boton-sesion ng-star-inserted"
+          (click)="scrollInit()" [hidden]="!isLoggedIn">
+          {{ phonePrefix}} {{ phoneNumber }}
+        </button>
+
+        <!----------------------------------------->
+
+
+
+        <!-- Tasto hamburger (visibile solo su dispositivi mobili) -->
+        <div class="navbars-extra d-flex align-items-center">
+          <a href="#" class="nav-togglers" [class.open]="isMenuOpen" (click)="toggleMenu($event)">
+            <span></span><span></span><span></span>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<!----------------------------------------------------------------------------------------->
+
+<!--Header mobile-->
+<header class="headerMobile" [ngClass]="{ 'fixed': !pannello }">
+
+  <div class="contMobile">
+
+    <!-- Tasto hamburger (visibile solo su dispositivi mobili) -->
+    <div class="bordoBotton">
+      <a href="#" class="nav-togglers" [class.open]="isMenuOpen" (click)="toggleMenu($event)">
+        <span class="one"></span><span></span><span></span>
+      </a>
+    </div>
+
+    <!--Logo mobile-->
+    <img src="assets/immaginiGenerali/logounika2.png" class="logoMobile">
+
+
+    <!--BOTTONE NEL MOBILE-->
+    <div class="mobile">
+
+      <button class="thm-btn" (click)="handleAuthAction()" [hidden]="isLoggedIn">
+        {{ buttonText }}
+      </button>
+
+      <button class="thm-btn" (click)="showPannello()" [hidden]="!isLoggedIn">
+        {{ phonePrefix }} {{ phoneNumber }}
+      </button>
+
+      <div *ngIf="isLoggedIn">
+        <app-pannello-login *ngIf="pannello"></app-pannello-login>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+</header>
+
+<!-- Menu laterale (visibile solo su mobile) -->
+<div class="side-menu" [ngClass]="{'open': isMenuOpen}">
+
+  <div class="bordoBotton2">
+    <a href="#" class="nav-togglers" [class.open]="isMenuOpen" (click)="toggleMenu($event)">
+      <span class="one2"></span><span></span><span></span>
+    </a>
+  </div>
+
+
+  <div class="site-logo">
+    <a href="/">
+      <img src="assets/immaginiGenerali/logounika2.png" alt="FundenHeader">
+    </a>
+  </div>
+
+  <ul>
+    <li>
+      <a routerLink="/discoverus" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Discover
+        us</a>
+    </li>
+    <li>
+      <a routerLink="/projectsiqo" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Projects
+        IQO</a>
+    </li>
+    <li><a routerLink="/company" routerLinkActive="active-link">Revenue</a></li>
+    <li><a (click)="openModal()">Exchange</a></li>
+    <!-- <li><a href="/news-standard">Accademy</a></li> -->
+    <!-- <li>
+      <a routerLink="/events" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Events</a>
+    </li> -->
+    <li>
+      <a routerLink="/contatti" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Contact us</a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+<!--------------------->
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-content">
+
+    <div class="d-flex justify-content-center">
+      <img src="assets/immaginiGenerali/modaleEx.png" class="mProj">
+    </div>
+
+    <div class="titoloModale">
+      Our Exchange is in development for<br> rebranding. It will be available soon
+    </div>
+
+    <button class="btnModale" (click)="closeModal()">Close</button>
+
+
+  </div>
+
+</div>

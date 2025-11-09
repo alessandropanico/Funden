@@ -1,0 +1,177 @@
+<div class="contHeader">
+  <app-header></app-header>
+</div>
+
+<!---------------------------->
+<!--DESKTOP-->
+
+<!-- <div class="desktop">
+  <div class="headsection">
+    <div class="button-container">
+      <button class="square-button"><img src="assets/immaginiCompany/all2.png" class="all"> All </button>
+      <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+      <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+      <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+      <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+      <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+      <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+    </div>
+  </div>
+</div> -->
+
+<div class="">
+  <div class="contData">
+
+    <div class="left-controls">
+      <!-- Select Anno -->
+      <div class="select-wrapper">
+        <select class="mySelect" [(ngModel)]="selectedYear" (change)="checkForm()">
+          <option value="">Anno</option>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+        <img src="assets/immaginiCompany/polygon.png" class="select-arrow" />
+      </div>
+
+      <!-- Select Mese -->
+      <div class="select-wrapper">
+        <select class="mySelect" [(ngModel)]="selectedMonth" (change)="checkForm()">
+          <option value="">Mese</option>
+          <option *ngFor="let month of months" [value]="month.value">{{ month.label }}</option>
+        </select>
+        <img src="assets/immaginiCompany/polygon.png" class="select-arrow" />
+      </div>
+
+      <!-- Bottone Search -->
+      <button class="myButton" [disabled]="!formValid">Search</button>
+    </div>
+
+    <!-- Order By -->
+    <div class="select-wrapper">
+      <select [(ngModel)]="orderBy" class="orderBySelect">
+        <option value="default">Order by - default</option>
+        <option value="name">Nome</option>
+        <option value="date">Data</option>
+      </select>
+      <img src="assets/immaginiCompany/polygon.png" class="select-arrow" />
+    </div>
+
+  </div>
+</div>
+
+
+<!---------------------------->
+<!--MOBILE-->
+
+<!-- <div class="mobile">
+  <div class="scrollContainer" appDragScroll>
+    <div class="headsection">
+      <div class="button-container">
+        <button class="square-button2"><img src="assets/immaginiCompany/all.png" class="all">All </button>
+        <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+        <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+        <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+        <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+        <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+        <button class="square-button"><i class="fa-solid fa-truck"></i> Transportation </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!---------------------------->
+
+<div class="">
+  <!-- <div class="d-flex justify-content-center">
+    <div class="boxCompany">
+      <div class="testoResults">Results</div>
+      <select class="mySelect">
+        <option value="30">30 DAYS</option>
+        <option value="15">15 DAYS</option>
+        <option value="7">7 DAYS</option>
+      </select>
+    </div>
+  </div> -->
+
+
+
+  <div class="cards-container">
+    <div class="big-card">
+      <div class="company-list">
+        <ng-container *ngFor="let company of paginatedCompanies; let last = last">
+          <div class="company-item">
+            <div class="company-info">
+
+              <!-- Logo e download -->
+              <div class="contCardCompany1">
+                <img [src]="company.image" alt="Company Logo" class="immCompany">
+                <div class="bordoDownload">
+                  <img src="assets/immaginiCompany/download.png" class="immDown" alt="Download Icon">
+                </div>
+              </div>
+
+              <div class="info">
+                <!-- Dettagli della compagnia -->
+                <div class="company-details">
+
+                  <div class="company-name">{{ company.name }}</div>
+                  <!-- Questo download è stato rimosso se già presente sopra -->
+                </div>
+
+                <!-- Altri dettagli -->
+                <div class="emission">Monthly billing</div>
+
+                <div class="cont">
+                  <div class="emission">Available quotas </div>
+                  <span class="company-text"> {{ company.earning }}</span>
+                </div>
+
+                <div class="cont">
+                  <div class="emission">Earning per quota </div>
+                  <span class="company-text"> {{ company.quotas }}</span>
+                </div>
+
+
+
+
+              </div>
+
+              <!--Dettagli dx-->
+              <div class="dettagliDx">
+                <div class="perc">{{ company.performance }}</div>
+                <button class="company-rating">{{ company.rating }}</button>
+              </div>
+
+
+            </div>
+          </div>
+        </ng-container>
+
+      </div>
+      <!-- Paginazione -->
+      <div class="pagination">
+        <button class="persButton" (click)="prevPage()" [disabled]="currentPage === 0">
+          <img src="assets/immaginiCompany/dx.png" class="pag2">
+        </button>
+        <ng-container *ngFor="let page of visiblePages">
+          <button class="page-button" [class.active]="page === currentPage" (click)="goToPage(page)"
+            [disabled]="page >= totalPages">
+            {{ page + 1 }}
+          </button>
+        </ng-container>
+        <button class="persButton" (click)="nextPage()"
+          [disabled]="(currentPage + 1) * itemsPerPage >= companies.length">
+          <img src="assets/immaginiCompany/dx.png" class="pag">
+        </button>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+<app-footer></app-footer>

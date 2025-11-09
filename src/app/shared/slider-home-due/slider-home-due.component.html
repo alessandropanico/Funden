@@ -1,0 +1,125 @@
+<!-- Swiper Slider Section -->
+<div *ngIf="isSwiperActive && slides.length > 0" class="emergency-project-slider">
+  <div class="container">
+    <div class="common-heading text-center mb-60">
+      <span class="pers"><i class="fa-solid fa-plus"></i> GREEN & SUSTAINABLE</span>
+      <h2 class="title">Carbon credit & green quotas</h2>
+    </div>
+    <swiper-container [breakpoints]="breakpoints" [autoplay]="autoplay" [loop]="loop" [space-between]="30"
+    [slides-per-view]="'auto'" autoplay="true">
+    <swiper-slide *ngFor="let slide of slides; let i = index">
+      <div class="project-item" (click)="openModal()">
+        <div class="thumb" [style.backgroundImage]="'url(' + slide.imgSrc + ')'"></div>
+        <div class="content">
+          <div class="cats">
+            <a [ngClass]="slide.categoryClass" [href]="slide.categoryLink">{{ slide.category }}</a>
+          </div>
+          <div class="author">
+            <img [src]="slide.authorImg || 'assets/immaginiHome/placeholder.jpg'"
+              [alt]="slide.authorName || 'Author Image'" />
+            <a >{{ slide.authorName }}</a>
+          </div>
+          <h5 class="titles">
+            <!-- <div>{{ slide.title }}</div> -->
+            <div [innerHTML]="slide.title"></div>
+          </h5>
+          <div class="project-stats">
+
+            <div class="stats-value">
+              <span class="value-title">Price per Quota
+                <!-- <span class="value">{{ slide.raised }}</span> -->
+              </span>
+              <span class="stats-percentage2">{{ slide.price }}</span>
+            </div>
+
+            <div class="stats-value">
+              <span class="value-title">Invest from
+                <!-- <span class="value">{{ slide.raised }}</span> -->
+              </span>
+              <span class="stats-percentage2">{{ slide.invest }}€</span>
+            </div>
+
+            <div class="stats-value">
+              <span class="value-title">Bonus round
+                <!-- <span class="value">{{ slide.raised }}</span> -->
+              </span>
+              <span class="stats-percentage3">{{ slide.percentage }}</span>
+            </div>
+
+            <div class="stats-value">
+              <span class="value-title">Expiry round</span>
+              <span class="stats-percentage">{{ slide.round2 }}</span>
+            </div>
+            <div class="stats-value">
+              <span class="value-title">Monthly revenue shared</span>
+              <span class="stats-percentage3">{{ slide.monthly }}</span>
+            </div>
+
+
+            <div class="stats-value">
+              <span class="value-title">Available quotas
+                <!-- <span class="value">{{ slide.raised }}</span> -->
+              </span>
+              <span class="stats-percentage3">{{ slide.quotas }}</span>
+            </div>
+
+            <!-- <div class="stats-bar" [attr.data-value]="slide.percentage">
+              <div class="bar-line" [style.width]="slide.percentage + '%'"></div>
+            </div> -->
+
+          </div>
+          <!-- <span class="calendar">
+            <i class="fa-solid fa-calendar-days"></i> <span class="dates">{{ slide.date }}</span>
+          </span> -->
+
+          <div class="contBtn">
+            <button class="btn1">
+              <img src="assets/immaginiProgetti/icon.png" class="icon">See more
+            </button>
+
+            <ng-container *ngIf="slide.showDateButton; else investNowBtn">
+              <button class="btn2">starting from
+                <div class="gross">{{ slide.customStartDate }}</div>
+              </button>
+            </ng-container>
+
+            <ng-template #investNowBtn>
+              <button class="btn2">Invest now</button>
+            </ng-template>
+          </div>
+
+
+
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-content">
+
+    <div class="d-flex justify-content-center">
+      <img src="assets/immaginiGenerali/modaleProgetti.png" class="mProj">
+    </div>
+
+    <div class="titoloModale">
+      Your account is currently not<br> authorized to invest in this project
+    </div>
+
+    <div class="descModale">
+      We’re sorry, but your account is currently not<br> authorized to invest in this project. If you are interested<br>
+      in
+      investing, please contact us at<br>
+      <span class="color">investment&#64;unika.email</span>
+    </div>
+
+    <button class="btnModale" (click)="closeModal()">I understand</button>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,83 @@
+.prompts {
+  display: flex;
+  padding: 1vw;
+
+  div {
+    text-align: right;
+    width: 20%;
+
+    &:first-child {
+      width: 80%;
+      text-align: left;
+    }
+
+    &:last-child {
+      span {
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        background-color: #F2F2F2;
+        border-radius: 10px;
+        color: #395AFF;
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  tr.mat-header-row {
+    height: auto;
+  }
+
+  th.mat-header-cell:first-of-type,
+  td.mat-cell:first-of-type,
+  td.mat-footer-cell:first-of-type {
+    padding-left: 0px !important;
+  }
+
+  th.mat-header-cell:last-of-type,
+  td.mat-cell:last-of-type,
+  td.mat-footer-cell:last-of-type {
+    padding-right: 0px !important;
+    text-align: right;
+  }
+}
+
+pagination-controls {
+  pointer-events: all !important;
+  /* Rende il componente interattivo */
+  opacity: 1 !important;
+  /* Assicura che il componente sia visibile */
+}
+
+.pagination-controls .pagination-buttons {
+  pointer-events: all !important;
+  /* Abilita l'interattività dei pulsanti */
+}
+
+.pagination-controls {
+  gap: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-container {
+  max-height: 300px; /* Altezza massima del blocco */
+  overflow-y: auto; /* Abilita lo scroll verticale */
+  border: 1px solid #ddd; /* Bordo per estetica */
+}
+
+table {
+  width: 100%;
+}
+
+tr.mat-header-row {
+  height: auto;
+  position: sticky;
+  top: 0;
+  background: white; /* Fissa l'header e lo mantiene visibile */
+  z-index: 2;
+}

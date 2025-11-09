@@ -1,0 +1,64 @@
+.contCheck {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.classCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0vw;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.checkboxPIN {
+  width: 1vw;
+  height: 2vh;
+  border: 2px solid #199C38;
+  border-radius: 4px;
+  background-color: #fff;
+  accent-color: #199C38;
+}
+
+.labeltesto {
+  font-size: 0.8vw;
+  color: gray;
+}
+
+.orange {
+  color: #199C38;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+
+  .classCheck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3vw;
+  }
+
+  .labeltesto {
+    font-size: 14px;
+  }
+
+  .checkboxPIN {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+}

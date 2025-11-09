@@ -1,0 +1,40 @@
+<div class="ph-40px pv-20px">
+  <div class="prompts">
+    <div class="bold color-black font-size-20px"><span>1</span></div>
+    <div><span>{{ availablePrompts }}</span></div>
+  </div>
+
+  <table mat-table [dataSource]="dataSourcePrompts">
+    <ng-container matColumnDef="nro">
+      <th mat-header-cell *matHeaderCellDef class="font-size-16px"> # </th>
+      <td mat-cell *matCellDef="let element; index as i" class="font-size-16px"> {{i + 1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="font-size-16px">2 </th>
+      <td mat-cell *matCellDef="let element" [attr.colspan]="2" class="color-blue font-size-16px">
+        {{element.promtpTEXT}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="offers">
+      <th mat-header-cell *matHeaderCellDef> <a href="javascript:void(0)" (click)="setActivateOffers()"
+          class="font-size-16px">3 </a> </th>
+      <td *matCellDef="let element"></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsPrompts"></tr>
+    <tr mat-row
+      *matRowDef="let row; columns: displayedColumnsPrompts | paginate: {itemsPerPage: configPrompts.itemsPerPage, currentPage: configPrompts.currentPage, totalItems: dataPrompts.length}">
+    </tr>
+  </table>
+
+  <div>
+    <pagination-controls class="mt-30px" *ngIf="dataPrompts.length" [responsive]="responsive"
+      [previousLabel]="labels.previousLabel" [nextLabel]="labels.nextLabel"
+      [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+      [screenReaderPageLabel]="labels.screenReaderPageLabel"
+      [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+      (pageChange)="configPrompts.currentPage = $event; onPageChangePrompts(configPrompts.currentPage)"></pagination-controls>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+<section class="cerchio">
+
+  <div class="d-flex justify-content-center">
+    <svg height="100" width="100">
+      <defs>
+        <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#223D7F" />
+          <stop offset="100%" stop-color="#01340B" />
+        </linearGradient>
+      </defs>
+
+      <circle class="progress-ring"
+        cx="50" cy="50"
+        r="30"
+        stroke="url(#progressGradient)"
+        stroke-width="6"
+        fill="transparent"
+        [style.stroke-dasharray]="'188'"
+        [style.stroke-dashoffset]="calculateDashOffset()" />
+
+      <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+        {{ Math.floor(timeRemaining / 60) }}:{{ ('0' + timeRemaining % 60).slice(-2) }}
+      </text>
+    </svg>
+
+  </div>
+
+  <div class="container text-center">
+    <div class="codice">
+      Non hai ricevuto il codice?<br>
+      <div class="altrocodice"
+      [ngClass]="{'disabled': !anotherCode}" (click)="richiestaCodice()">
+      Click here to receive another one
+      </div>
+    </div>
+  </div>
+
+  </section>

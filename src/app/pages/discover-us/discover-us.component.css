@@ -1,0 +1,32 @@
+.fa-plus {
+  font-weight: bolder;
+}
+
+.sectionSlider {
+  margin-top: 20vh;
+}
+
+.sectionSlider2 {
+  margin-top: 20vh;
+  background-color: #EDF9F3;
+}
+
+.counter-with-video {
+  margin-top: 20ch;
+}
+
+.persImm {
+  width: 20vw;
+}
+
+p {
+  font-family: 'Roboto';
+}
+
+.count {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.suffix{
+  font-family: 'Roboto', sans-serif !important;
+}

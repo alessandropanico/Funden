@@ -1,0 +1,111 @@
+ <div class="modal-content" *ngIf="modal">
+  <div class="cont">
+    <div class="testo">
+      By clicking on 'Accept all cookies', the user<br> agrees to store cookies on their device to<br> improve site
+      navigation,
+      analyze site usage,<br> and assist in our marketing activities.
+    </div>
+
+
+    <div class="contBtn">
+      <button class="btnModal" (click)="closeModal()">Accept all cookies</button>
+      <button class="btnModal" (click)="closeModal()">Reject all</button>
+
+    </div>
+
+    <a class="cookieSettings" (click)="openSettings()">Cookie Settings</a>
+
+
+  </div>
+</div>
+
+
+ <div class="modal-overlay" *ngIf="settings"></div>
+
+
+ <div class="modal-setting" *ngIf="settings">
+
+  <img src="assets/immaginiGenerali/logounika.png" class="logo">
+
+  <div class="linea"></div>
+
+
+  <div class="titoloSettings">Privacy Information Center</div>
+
+  <div class="descSettings">
+    When you visit any website, it can store or retrieve information on your<br> browser, mostly in the form of cookies.
+    This information may be about<br> you, your preferences, or your device and is mostly used to make the<br> site work
+    as
+    you expect it to. The information usually doesn’t directly<br> identify you, but it can provide a more personalized
+    web experience.<br> Because we respect your right to privacy, you can choose not to allow<br> some types of cookies.
+    Click
+    on the headers of the different categories<br> to change the default settings. However, blocking some types of<br>
+    cookies
+    may impact your experience of the site and the services we are<br> able to offer.
+  </div>
+
+  <div class="contTesto2">
+
+    <div class="testo2">
+      <a href="assets/documenti/EN - Antereum Privacy Polícy.pdf" target="_blank">
+        Read our <span class="color">Privacy Policy</span>
+      </a>
+    </div>
+
+    <div class="testo2">
+      <a href="assets/documenti/EN - Unika Termini e Condizioni 1 marzo 2024.docx.pdf" target="_blank">
+        Read our <span class="color">Terms and Conditions</span>
+      </a>
+    </div>
+
+  </div>
+
+  <button class="btnAccept" (click)="closeModal()">Accept all cookies</button>
+
+  <div class="testo3">Manage Consent Preferences</div>
+
+  <div class="contChooise">
+    <div class="testo2">Strictly Necessary Cookies</div>
+    <div class="always">Always active</div>
+
+    <div class="testo2">Functionality Cookies</div>
+    <label class="switch">
+      <input
+        type="checkbox"
+        [checked]="cookiesPrefs.functionality"
+        (change)="onToggle($event, 'functionality')"
+      >
+      <span class="slider"></span>
+    </label>
+
+    <div class="testo2">Targeted Advertising Cookies</div>
+    <label class="switch">
+      <input
+        type="checkbox"
+        [checked]="cookiesPrefs.advertising"
+        (change)="onToggle($event, 'advertising')"
+      >
+      <span class="slider"></span>
+    </label>
+
+    <div class="testo2">Performance Cookies</div>
+    <label class="switch">
+      <input
+        type="checkbox"
+        [checked]="cookiesPrefs.performance"
+        (change)="onToggle($event, 'performance')"
+      >
+      <span class="slider"></span>
+    </label>
+  </div>
+
+
+
+  <div class="contBtn2">
+    <button class="btnFinalModal" (click)="closeModal()">Reject All</button>
+    <button class="btnFinalModal" (click)="confirmChoices()">Confirm My Choices</button>
+  </div>
+
+
+</div>
+

@@ -1,0 +1,321 @@
+.input-group {
+  width: 23.906vw;
+  height: 6.374vh;
+  font-size: 1.042vw;
+  border-radius: 0.573vw;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#prefixSelect {
+  width: 6vw;
+  height: 5.37vh;
+  font-size: 1.042vw;
+  text-align: center;
+  border-right: none;
+  border-top-left-radius: 0.573vw !important;
+  border-bottom-left-radius: 0.573vw !important;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 35px;
+  background-color: white;
+}
+
+.form-control {
+  width: calc(100% - 7vw);
+  border-left: none;
+  border-top-right-radius: 0.573vw !important;
+  border-bottom-right-radius: 0.573vw !important;
+  border-color: #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  height: 5.37vh;
+  padding-left: 1.5vw;
+}
+
+/* Per Webkit (Chrome, Safari, Edge) */
+.form-control::-webkit-outer-spin-button,
+.form-control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Per Firefox */
+.form-control {
+  -moz-appearance: textfield;
+}
+
+
+.nTel {
+  font-size: 0.781vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.receive-code {
+  position: absolute;
+  top: 50%;
+  right: 0.521vw;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #FF8000 !important;
+  text-decoration: underline;
+  text-decoration: none;
+  font-size: 0.938vw;
+  z-index: 9999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.select-wrapper select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.select-wrapper input:focus {
+  border-color: #ccc;
+  outline: none;
+  box-shadow: none;
+}
+
+.select-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.linea {
+  background-color: rgb(165, 165, 165);
+  width: 0.05vw;
+  height: 3.297vh;
+  position: absolute;
+  top: 1.5vh;
+  right: 16.8vw;
+  display: block;
+  z-index: 999;
+}
+
+.input-group:focus-within .linea {
+  display: block;
+}
+
+
+.disabled {
+  pointer-events: none;
+  /* Impedisce l'interazione con gli elementi disabilitati */
+}
+
+.disabled .form-select,
+.disabled .form-control {
+  background-color: #e6e6e683;
+  /* Imposta il colore di sfondo degli elementi disabilitati */
+}
+
+.disabled .receive-code {
+  pointer-events: auto;
+  /* Rendi cliccabile l'elemento "ricevi codice" quando il contenitore è disabilitato */
+  color: #FF8000 !important;
+  /* Colore del testo quando il contenitore è disabilitato */
+  z-index: 9999;
+  opacity: 1 !important;
+  /* Imposta l'opacità del testo "ricevi codice" a 1 quando è presente la classe "disabled" */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputSection .disabled .receive-code {
+  opacity: 1 !important;
+  /* Imposta l'opacità del testo "ricevi codice" a 1 quando è presente la classe "disabled" */
+}
+
+
+.margineSetOrario {
+  margin-top: 7.4vh !important;
+}
+
+.flag-container {
+  width: 25px;
+  height: 17px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-icon {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Contenitore bandiera */
+.flag-container {
+  width: 25px;
+  height: 17px;
+  position: absolute;
+  left: 10px;
+  /* Distanza dal bordo sinistro */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.flag-icon {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+/* Stile per il select */
+.prefix-select {
+  width: 8vw;
+  font-size: 1.042vw;
+  padding-left: 40px;
+  text-align: left;
+  border-right: none;
+  border-top-left-radius: 0.573vw !important;
+  border-bottom-left-radius: 0.573vw !important;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: white;
+  appearance: none;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 25px 17px;
+}
+
+.prefix-select option {
+  padding-left: 30px;
+  /* Per lasciare spazio alla bandiera */
+}
+
+
+/* Nasconde la freccia di default */
+.prefix-select::after {
+  content: '▼';
+  font-size: 0.8vw;
+  color: #333;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Input telefono */
+.form-control {
+  width: calc(100% - 7vw);
+  border-left: none;
+  border-top-right-radius: 0.573vw !important;
+  border-bottom-right-radius: 0.573vw !important;
+  border-color: #ccc;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+}
+
+.country-name {
+  position: absolute;
+  left: 6vw;
+  font-size: 1vw;
+  color: black;
+  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.polygon {
+  width: 0.8vw;
+  height: auto;
+  position: absolute;
+  left: calc(5.7vw + 5px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+
+.form-control::placeholder {
+  font-style: italic;
+}
+
+.disabled .form-select,
+.disabled .form-control {
+  background-color: #e6e6e683; /* Imposta il colore di sfondo degli elementi disabilitati */
+}
+
+.prefix-select:disabled {
+  background-color: #e6e6e6 !important; /* Colore grigio */
+  color: #a0a0a0 !important; /* Colore del testo più chiaro */
+  border: 1px solid #ccc !important; /* Bordo più tenue */
+  cursor: not-allowed; /* Cambia il cursore per indicare che è disabilitata */
+}
+
+
+@media screen and (max-width:600px) {
+
+  .polygon {
+    width: 15px;
+    top: 57%;
+    position: absolute;
+    left: calc(20vw + 5px);
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .input-group {
+    width: 87.923vw;
+    height: 5.425vh;
+    font-size: 3.865vw;
+  }
+
+  .nTel {
+    font-size: 2.899vw;
+  }
+
+  .form-control {
+    width: calc(100% - 29vw);
+    height: 6vh;
+    border-top-right-radius: 2vw !important;
+    border-bottom-right-radius: 2vw !important;
+    padding-left: 10px;
+  }
+
+  .receive-code {
+    font-size: 4.348vw;
+  }
+
+  .input-group {
+    width: 87.923vw;
+    height: 5.425vh;
+    font-size: 3.865vw;
+  }
+
+  #prefixSelect {
+    width: 25vw;
+    font-size: 3.865vw;
+    border-top-left-radius: 2vw !important;
+    border-bottom-left-radius: 2vw !important;
+    height: 6vh;
+    padding-left: 2vw;
+  }
+
+  .linea {
+    right: 60.52vw;
+    top: 1.1vh;
+    height: 4vh;
+
+  }
+
+  .receive-code {
+    font-size: 3.865vw;
+    right: 1.778vw;
+  }
+}

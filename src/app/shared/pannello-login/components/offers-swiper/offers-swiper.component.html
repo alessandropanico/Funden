@@ -1,0 +1,31 @@
+<div class="bold color-black">
+  <div class="font-size-26px mb-10px mt-10px">titolo</div>
+  <div class="cerrar">
+    <span class="fa fa-close" (click)="setActivateOffers(activateOffers)"></span>
+  </div>
+</div>
+
+<!-- Nuovo carosello senza Swiper -->
+<div class="carousel-container">
+  <div class="carousel">
+    <div *ngFor="let plan of plansArtist; let i = index" class="carousel-item" [class.active]="i === currentIndex">
+      <div class="item-plan" [ngClass]="{ 'border-color-red': plan.planCOLOR === 'red', 'border-color-blue': plan.planCOLOR === 'blue', 'border-color-green': plan.planCOLOR === 'green' }">
+        <!-- Prezzo sconto -->
+        <div class="font-size-50px">{{ plan.planDISCOUNTPRICE }}</div>
+        <!-- Prezzo originale -->
+        <p class="font-size-18px text-decoration-line-through">{{ plan.planFULLPRICE }}</p>
+        <h3 class="font-weight-800 color-black">{{ plan.planTITLE }}</h3>
+        <p class="color-blue font-size-14px">{{ plan.planQUANTITYPROMTP }}</p>
+        <!-- Ciclo attraverso gli Item per mostrare eventuali dettagli -->
+        <div *ngFor="let item of plan.Items">
+          <p [ngClass]="{ 'font-weight-bold': item.itemBOLD }">{{ item.itemTEXT }}</p>
+        </div>
+        <button (click)="onBuyNow(i)">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  <button class="prev" (click)="moveToPrev()">&#10094;</button>
+  <button class="next" (click)="moveToNext()">&#10095;</button>
+</div>
+
+<app-modal-buy-plan [plan]="plansArtist[currentIndex].id"></app-modal-buy-plan>

@@ -1,0 +1,14 @@
+<div *ngIf="isSwiperActive && slides.length > 0">
+  <swiper-container [breakpoints]="breakpoints" [autoplay]="autoplay" [loop]="loop" [loop-additional-slides]="2"
+    autoplay="true">
+    <swiper-slide *ngFor="let slide of slides; let i = index">
+      <div class="boxGreen">
+        <img class="iconServizi" [src]="slide.imgSrc">
+        <div class="cont">
+          <div class="titoloBox" [innerHTML]="slide.title"></div>
+          <div class="descrizioneBox" [innerHTML]="slide.description"></div>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>

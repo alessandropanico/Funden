@@ -1,0 +1,294 @@
+.header__btn {
+  border: 2px solid #2a2a2a;
+  color: #2a2a2a;
+}
+
+.header__btn:hover {
+  border: 2px solid #2a2a2a;
+  color: #fff;
+  background-color: #2a2a2a;
+}
+
+  .head {
+    .icon-log-out {
+      font-size: 35px;
+      right: 13px;
+      position: absolute;
+      top: 13px;
+      color: #393654;
+    }
+  }
+
+  .tab {
+    display: flex;
+    height: 20px;
+
+    .tab-item {
+      width: 50%;
+      text-align: center;
+
+      a {
+        color: #2a2a2a;
+        top: -6px;
+        position: relative;
+
+        &:hover {
+          opacity: 0.6;
+        }
+
+        &.active {
+          color: #395aff;
+        }
+      }
+
+      &:first-child {
+        border-right: rgb(172, 170, 170) 2px solid;
+      }
+    }
+  }
+
+  %content-table {
+    /* width: 380px; */
+    height: 398px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .content-table {
+    @extend %content-table;
+  }
+
+  .content-payment-balance {
+    position: relative;
+
+    .payment-balance {
+      @extend %content-table;
+
+      padding: 20px;
+      height: 650px;
+      bottom: -1px;
+      position: absolute;
+      z-index: 1;
+
+      .thm-btn {
+        width: 214px;
+
+        &:disabled {
+          background-color: #53a1f5;
+          border-color: #53a1f5;
+        }
+      }
+    }
+  }
+
+  .content-dashed {
+    /* width: 379px; */
+    height: 192px;
+    border: 2px dashed;
+    padding: 20px;
+    border-radius: 10px;
+
+    .thm-btn {
+      width: 214px;
+    }
+
+    &.color-green {
+      .thm-btn {
+        background-color: #0cc8ae;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  .cerrar {
+    position: relative;
+    .fa-close {
+      position: absolute;
+      right: 17px;
+      top: -49px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .swiper-plans {
+    .item-plan {
+      height: 300px;
+      padding: 15px;
+      border: #000 2px solid;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &.border-color-red {
+        border-color: #e13232 !important;
+      }
+
+      &.border-color-blue {
+        border-color: #395aff !important;
+      }
+
+      &.border-color-green2 {
+        border-color: #13c158 !important;
+      }
+
+      .icon {
+        font-size: 30px !important;
+      }
+
+      .thm-btn {
+        width: 100%;
+        height: 50px;
+        border-radius: 20px;
+        padding-top: 6px;
+        padding-right: 0px;
+        padding-left: 0px;
+        font-weight: bold !important;
+      }
+    }
+  }
+
+  .thm-btn {
+    &.cta-three__btn {
+      width: 214px;
+      height: 54px;
+    }
+  }
+
+  .login-img {
+    width: 100px;
+    height: 130px;
+    mix-blend-mode: darken;
+    opacity: 1;
+  }
+
+.pointer {
+  cursor: pointer;
+}
+
+.center-item {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.over-f-a {
+  overflow: auto;
+}
+
+.w-790 {
+  width: 820px;
+}
+
+.m-b-20 {
+  margin-bottom: 20px;
+}
+
+.m-t--15 {
+  margin-top: -15px;
+}
+
+.icon-close {
+  float: right;
+  margin-top: -35px;
+  margin-right: 5px;
+  font-size: 25px;
+}
+
+.modal-payment {
+  background: transparent linear-gradient(143deg, #3beefb 0%, #a0ff4c 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 20px;
+  opacity: 1;
+  padding: 5px;
+}
+
+.modal-payment-body {
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.icon-close-modal {
+  float: right;
+  font-weight: bold;
+  font-size: 25px;
+  color: #000000;
+}
+
+.img-modal-icon {
+  height: 64px;
+  width: 68px;
+}
+
+.m-t-15 {
+  margin-top: 15px;
+}
+
+.text-modal-paymnet {
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+form {
+  .content-checkbox {
+    display: flex;
+
+    input[type='checkbox'] {
+      width: 28px;
+      height: 28px;
+      opacity: 1;
+      margin-right: 10px;
+      border: 2px solid #dadae5;
+      border-radius: 10px;
+    }
+
+    label {
+      top: 0px;
+      position: relative;
+    }
+  }
+
+  .btn {
+    &.btn-amount {
+      width: 72px;
+      height: 46px;
+      border: 2px solid #395aff;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      &:hover {
+        background-color: #395aff;
+        color: #fff;
+      }
+    }
+  }
+
+  .input-group {
+    input {
+      border-radius: 10px;
+    }
+
+    .input-group-append {
+      position: relative;
+
+      .input-group-text {
+        background-color: #395aff;
+        color: #fff;
+        border-radius: 10px;
+        width: 40px;
+        left: -39px;
+        position: absolute;
+        z-index: 3;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.pin {
+  font-size: 0.781vw;
+  margin-bottom: 1vh;
+}
+
+.pin2 {
+  font-size: 0.781vw;
+  margin-top: 3.205vh;
+}
+
+.pinSection {
+  margin-left: 0vw;
+  margin-right: 2vw;
+  margin-top: 1.387vh;
+}
+
+.pinSection2 {
+  margin-left: 0vw;
+  margin-right: 2vw;
+  margin-top: 1.387vh;
+}
+
+.verification-code {
+  width: 3.281vw;
+  height: 8.242vh;
+  border-radius: 0.469vw;
+  border: solid 0.026vw rgb(200, 200, 200);
+  font-size: 2.448vw;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+
+}
+
+.fa-eye {
+  width: 1.823vw;
+  height: auto;
+  margin-top: 1.2vw;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  margin-left: 23.7vw;
+  position: absolute;
+
+}
+
+.fa-eye-slash {
+  width: 1.823vw;
+  height: auto;
+  margin-top: 0.9vw;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  margin-left: 23.7vw;
+  position: absolute;
+}
+
+.col-1 {
+  width: 2.4vw !important;
+}
+
+.offset {
+  margin-left: 2vw;
+}
+
+.secondoPin{
+  margin-top: 5vh;
+}
+
+@media screen and (max-width:600px) {
+
+  .pin {
+    font-size: 2.899vw;
+    margin-bottom: 1vh;
+  }
+
+  .pin2 {
+    font-size: 2.657vw;
+    margin-left: -6vw;
+
+  }
+
+  .verification-code {
+
+    width: 12.319vw;
+    height: 7.077vh;
+    border-radius: 2.174vw;
+    border: solid 0.242vw rgb(200, 200, 200);
+    font-size: 9.42vw;
+  }
+
+
+
+  .col-1 {
+    width: 5vw;
+  }
+
+  .fa-eye {
+    width: 6.763vw;
+    height: 2.204vh;
+    margin-top: 2.5vh;
+    margin-left: 85vw;
+  }
+
+  .fa-eye-slash {
+    width: 6.763vw;
+    height: 3vh;
+    margin-top: 2vh;
+    margin-left: 85vw;
+
+  }
+
+  .offset {
+    margin-left: 11vw;
+  }
+
+  .pinSection {
+    margin-left: -6.5vw;
+  }
+
+  .secondoPin{
+    margin-top: 3vh;
+  }
+
+}

@@ -1,0 +1,53 @@
+.myButton {
+  border-radius: 3vw;
+  display: flex;
+  align-items: center; /* Allinea verticalmente il testo */
+  justify-content: center; /* Allinea orizzontalmente il testo */
+  text-align: center;
+  font-size: 1vw;
+  background-color: #223D7F;
+  color: white;
+  border: none;
+  width: 20.26vw;
+  height: 6.648vh;
+  padding: 0.8vw;
+  white-space: nowrap; /* Evita la rottura del testo */
+}
+
+.myButton:disabled {
+  color: #223D7F;
+  background-color: white;
+  border: solid 1px #223D7F;
+}
+
+
+
+@media screen and (max-width:600px) {
+
+
+  .myButton {
+    border-radius: 10vw;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-size: 5vw;
+    color: white;
+    border: none;
+    width: 75vw;
+    height: 6.032vh;
+    padding: 2vw;
+  }
+
+
+  .myButton:disabled {
+    background-color: white;
+  }
+
+
+}
+
+@media screen and (min-width:1920px){
+  .myButton{
+    padding: 1vw;
+  }
+}

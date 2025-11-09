@@ -1,0 +1,88 @@
+<section class="pinSection" *ngIf="phasePin!==1 && phasePin!==2 && phasePin!==3">
+
+  <div *ngIf="phase==3" class="pin">Create your PIN - <strong>5 numbers</strong></div>
+  <div *ngIf="phaseLoginP==2" class="pin">Insert your PIN - <strong>5 numbers</strong></div>
+
+  <div class="d-flex justify-content-center">
+    <ng-container *ngFor="let digit of [1, 2, 3, 4, 5]; let i = index">
+      <div class="">
+        <div class="col">
+          <input [type]="showPassword ? 'text' : 'password'" class="verification-code form-control text-center "
+            [(ngModel)]="pinCode[i]" (input)="onVerificationCodeInput($event, i)"
+            (keydown)="onVerificationCodeKeyDown($event, i)" [maxlength]="1" [id]="'inputMIO_' + i + '_' + uniqueId"
+            (click)="clearPinBox(i)">
+        </div>
+        <div class="col-1 offset"></div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!showPassword">
+      <img src="assets/immaginiGenerali/eye.png" class="fa-eye" (click)="togglePasswordVisibility()">
+    </ng-container>
+
+    <ng-container *ngIf="showPassword">
+      <img src="assets/immaginiGenerali/eyeslash.png" class="fa-eye-slash" (click)="togglePasswordVisibility()">
+    </ng-container>
+  </div>
+
+</section>
+
+<!---------------------------------------------------->
+<!--RECUPERO PIN-->
+
+<section class="pinSection2" *ngIf="phasePin==2">
+
+  <div *ngIf="phase==3" class="pin">Create your PIN - <strong>5 numbers</strong></div>
+  <div *ngIf="phaseLoginP==2" class="pin">Insert your PIN - <strong>5 numbers</strong></div>
+
+  <div class="d-flex justify-content-center">
+    <ng-container *ngFor="let digit of [1, 2, 3, 4, 5]; let i = index">
+      <div class="">
+        <div class="col">
+          <input [type]="showPassword ? 'text' : 'password'" class="verification-code form-control text-center "
+            [(ngModel)]="pinCode[i]" (input)="onVerificationCodeInput($event, i)"
+            (keydown)="onVerificationCodeKeyDown($event, i)" [maxlength]="1" [id]="'inputMIO_' + i + '_' + uniqueId"
+            (click)="clearPinBox(i)">
+        </div>
+        <div class="col-1 offset"></div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!showPassword">
+      <img src="assets/immaginiGenerali/eye.png" class="fa-eye" (click)="togglePasswordVisibility()">
+    </ng-container>
+
+    <ng-container *ngIf="showPassword">
+      <img src="assets/immaginiGenerali/eyeslash.png" class="fa-eye-slash" (click)="togglePasswordVisibility()">
+    </ng-container>
+  </div>
+
+
+  <!--2-->
+<div class="secondoPin">
+  <div class="pin">Repeat your PIN - <strong>5 numbers</strong></div>
+
+  <div class="d-flex justify-content-center">
+    <ng-container *ngFor="let digit of [1, 2, 3, 4, 5]; let i = index">
+      <div class="">
+        <div class="col">
+          <input [type]="showPassword2 ? 'text' : 'password'" class="verification-code form-control text-center "
+            [(ngModel)]="pinCode2[i]" (input)="onVerificationCodeInput2($event, i)"
+            (keydown)="onVerificationCodeKeyDown2($event, i)" [maxlength]="1" [id]="'inputMIO_2' + i + '_' + uniqueId"
+            (click)="clearPinBox2(i)">
+        </div>
+        <div class="col-1 offset"></div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!showPassword2">
+      <img src="assets/immaginiGenerali/eye.png" class="fa-eye" (click)="togglePasswordVisibility2()">
+    </ng-container>
+
+    <ng-container *ngIf="showPassword2">
+      <img src="assets/immaginiGenerali/eyeslash.png" class="fa-eye-slash" (click)="togglePasswordVisibility2()">
+    </ng-container>
+  </div>
+</div>
+
+</section>

@@ -1,0 +1,70 @@
+.row {
+  flex-wrap: nowrap; /* Imposta il comportamento di non avvolgimento */
+  white-space: nowrap; /* Assicura che gli elementi non vengano a capo */
+  justify-content: space-between; /* Distribuisci uniformemente gli input sulla riga */
+
+}
+
+.cont2{
+  /* width:21.563vw; */
+  margin-top: 3.187vh;
+  margin-left: 0.4vw;
+}
+
+.verification-code {
+  width: 3.281vw;
+  height: 8.242vh;
+  border-radius: 0.469vw;
+  border: solid 0.026vw rgb(200, 200, 200);
+  font-size: 2.448vw;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color:black;
+}
+
+.col{
+  margin-left: -0.4vw;
+}
+.cod{
+  font-size: 0.781vw;
+  margin-left: -0.4vw;
+  margin-bottom: 0.5vh;
+}
+
+
+@media screen and (max-width:600px){
+
+  .cont2{
+    /* width:21.563vw; */
+    width: 100%;
+    margin-left: 1vw;
+
+  }
+
+  .cod{
+    font-size:2.899vw;
+    margin-left: -2.5vw;
+    position: absolute;
+    margin-top: -1vh;
+  }
+
+  .verification-code {
+
+    width: 12.319vw;
+    height: 7.077vh;
+    border-radius: 2.174vw;
+    border: solid 0.242vw rgb(200, 200, 200);
+    font-size: 9.42vw;
+    margin-top: 1.673vh;
+    font-family: "Open Sans", sans-serif;
+    color:black;
+  }
+
+
+  .col {
+    margin-left: -2.6vw;
+}
+
+
+
+}

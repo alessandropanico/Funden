@@ -1,0 +1,33 @@
+<div class="titolo1" *ngIf="phasePin!==1">
+  Login/register on
+</div>
+
+<div class="titolo2" *ngIf="phasePin!==1">
+  Unika
+</div>
+
+<div class="titolo1" *ngIf="phasePin==1">
+  Recupera
+</div>
+
+<div class="titolo2" *ngIf="phasePin==1">
+  il tuo PIN
+</div>
+
+<!------------------------------>
+
+
+<div class="testo" *ngIf="phasePin!==1">
+  Insert your phone number to get started
+</div>
+
+<div class="testo" *ngIf="phasePin==1">
+  Enter the phone number used for registration to verify your identity.
+</div>
+
+
+<!------------------------------>
+
+<div class="testoCodice" *ngIf="phase==2 || phasePin==1">
+  We have sent a verification code at the<br> number you provided
+</div>

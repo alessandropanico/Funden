@@ -1,0 +1,139 @@
+<footer class="site-footer ">
+  <div class="footer-content-area">
+    <div class="container">
+      <div class="footer-widgets">
+        <div class="row justify-content-between">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="widget about-widget">
+              <div class="footer-logo"><img src="assets/immaginiGenerali/logounikab.png" alt="Funden" /></div>
+              <p>Unika is the only Exchange regulated for Quota Trading</p>
+              <div class="newsletter-form">
+                <h5 class="form-title">Join Newsletters</h5>
+                <form action="#"><input type="text" placeholder="Email Address" /><button type="submit"><i
+                      class="fa-solid fa-arrow-right"></i></button></form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-5 col-sm-6">
+            <div class="widget nav-widget">
+              <h4 class="widget-title">Quick links</h4>
+              <ul>
+                <li><a routerLink="/discoverus">Discover us</a></li>
+                <li><a routerLink="/projectsiqo">Projects IQO</a></li>
+                <li><a routerLink="/company">Revenue</a></li>
+                <li><a class="pers" (click)="openModal()">Exchange</a></li>
+                <li><a href="/registerprivate">Login</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="widget nav-widget">
+              <h4 class="widget-title">Legal pages</h4>
+              <ul>
+                <li><a href="assets/documenti/EN - Antereum Privacy Polícy.pdf" target="_blank">
+                    Privacy Policy</a></li>
+
+                <li><a href="assets/documenti/EN - Unika Termini e Condizioni 1 marzo 2024.docx.pdf"
+                    target="_blank">Terms and Conditions</a></li>
+
+                <li><a href="assets/documenti/Unika ethical chart - EN.pdf"
+                  target="_blank">Ethical Chart</a></li>
+
+                <li><a href="/">Membership Agreement</a></li>
+
+                <li><a routerLink="/deleteaccount">Delete Account</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-auto col-md-5 col-sm-8">
+            <div class="widget contact-widget">
+              <h4 class="widget-title">Contact Us</h4>
+              <ul class="info-list">
+
+                <!--
+                              <li><span class="icon"><i class="fa-solid fa-phone"></i></span><span
+                                      class="info"><span class="info-title">Phone Number</span><a
+                                          href="#">+39 366 2025 750</a></span></li> -->
+                <li>
+                  <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                  <span class="info">
+                    <span class="info-title">General Email</span>
+                    <a href="#">info&#64;unika.email</a>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                  <span class="info">
+                    <span class="info-title">Support Email</span>
+                    <a href="#">help&#64;unika.email</a>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                  <span class="info">
+                    <span class="info-title">Account Lock Email</span>
+                    <a href="#">stop&#64;unika.email</a>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                  <span class="info">
+                    <span class="info-title">TOP Clients</span>
+                    <a href="#">top&#64;unika.email</a>
+                  </span>
+                </li>
+
+                <!-- <li><span class="icon"><i class="fa-solid fa-map-marker-alt"></i></span><span
+                                      class="info"><span class="info-title">Locations</span><a href="#">Rua de Xjsah, 1937 PT</a></span></li> -->
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-area">
+        <div class="">
+          <!-- <div class="col-md-6">
+            <ul class="social-icons">
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fab fa-behance"></i></a></li>
+              <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            </ul>
+          </div> -->
+          <div class="col-md-6">
+            <p class="copyright-text">© 2025 Unika Exchange - ALL RIGHTS RESERVED
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-content">
+
+    <div class="d-flex justify-content-center">
+      <img src="assets/immaginiGenerali/modaleEx.png" class="mProj">
+    </div>
+
+    <div class="titoloModale">
+      Our Exchange is in development for<br> rebranding. It will be available soon
+    </div>
+
+    <button class="btnModale" (click)="closeModal()">Close</button>
+
+
+  </div>
+
+</div>

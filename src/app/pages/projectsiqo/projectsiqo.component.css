@@ -1,0 +1,375 @@
+.contHeader {
+  background-color: white;
+  width: 100%;
+  height: 12.4vh;
+  z-index: 99999;
+}
+
+.page-title-area {
+  position: relative;
+  z-index: 1;
+  padding: 125px 0;
+  background-image: url(/assets/immaginiContatti/intro.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.section-gap-extra-bottom {
+  padding-top: 115px;
+  padding-bottom: 200px;
+}
+
+.project-item {
+  cursor: pointer;
+}
+
+.title {
+
+  font-size: 15px !important;
+  font-weight: 400;
+  color: gray;
+
+}
+
+.project-items .project-item .author a {
+  font-weight: bold;
+  color: black !important;
+}
+
+.stats-percentage {
+  font-weight: bold;
+  color: #EB2932 !important;
+}
+
+.stats-percentage2 {
+  font-weight: bold;
+  color: #41B74F;
+}
+
+.stats-percentage3 {
+  font-weight: bold;
+  color: #223D7F;
+}
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 1vw;
+  width: 36.094vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.btnModale {
+  margin-top: 2vh;
+  background-color: #223D7F;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+  color: white;
+  width: 14vw;
+  height: 7vh;
+  border-radius: 3vw;
+  margin-bottom: 5vh
+}
+
+
+
+.mProj {
+  width: 12vw;
+  margin-top: 2vh;
+}
+
+.titoloModale {
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.descModale {
+  font-size: 1vw;
+  color: gray;
+  margin-top: 2.7vh;
+  line-height: 1.7;
+}
+
+
+.color {
+  color: #199D14;
+  font-weight: bold;
+}
+
+@media screen and (max-width:600px) {
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .modal-content {
+    background-color: white;
+    border-radius: 4vw;
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mProj {
+    width: 40vw;
+    margin-top: 2vh;
+  }
+
+  .titoloModale {
+    font-size: 6vw;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+  }
+
+  .descModale {
+    font-size: 3.5vw;
+    color: gray;
+    margin-top: 1vh;
+    line-height: 1.7;
+  }
+
+  .btnModale {
+    margin-top: 2vh;
+    background-color: #223D7F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    color: white;
+    width: 80%;
+    height: 6vh;
+    border-radius: 14vw;
+    margin-bottom: 5vh;
+  }
+}
+
+.project-items .project-item .thumb {
+  width: 100%;
+  height: 270px;
+  background-size: cover;
+  background-position: 50%;
+  border-top-right-radius: 1vw;
+  border-top-left-radius: 1vw;
+}
+
+
+
+
+.contBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3%;
+  margin-top: 2vh;
+}
+
+.icon {
+  width: 1vw;
+}
+
+.btn1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  border-radius: 2vw;
+  border: none;
+  background-color: #223D7F;
+  font-size: 16px;
+  width: 8vw;
+  height: 6vh;
+}
+
+.btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  border-radius: 2vw;
+  border: none;
+  background-color: #223D7F;
+  font-size: 16px;
+  width: 12vw;
+  height: 6vh;
+}
+
+.gross {
+  font-weight: bold;
+}
+
+
+.author {
+  flex: 0 0 35px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  margin-top: -50px;
+}
+
+
+.category-green {
+  background-color: #3CB371 !important;
+  font-weight: bold;
+  border-radius: 3vw;
+}
+
+.category-yellow {
+  background-color: #FFB400 !important;
+  font-weight: bold;
+  border-radius: 3vw;
+
+}
+
+.project-item .thumb {
+  width: 100%;
+  height: 270px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px solid #ddd;
+}
+
+
+.project-items .project-item .content {
+  padding: 55px 15px 30px;
+  background-color: var(--white);
+  position: relative;
+  box-shadow: 0 10px 30px 0 hsla(0, 0%, 87%, .3);
+  border-bottom-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
+.project-items .project-item .cats a {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 12px 20px;
+  box-shadow: none !important;
+}
+
+.project-item .cats a {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 12px 20px;
+  box-shadow: 0 10px 30px 0 rgba(2, 169, 92, .5);
+  width: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-item .cats {
+  transform: translateY(-180%);
+  margin: 0;
+  margin-left: 6vw;
+  position: inherit;
+  left: 10px;
+}
+
+.project-items .project-item .content {
+  padding: 15px;
+  background-color: var(--white);
+  position: relative;
+  box-shadow: 0 10px 30px 0 hsla(0, 0%, 87%, .3);
+  border-bottom-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
+
+@media screen and (max-width:600px) {
+
+  .project-item .cats a {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 12px 20px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    border-radius: 7vw;
+    border: none;
+    background-color: #223D7F;
+    font-size: 5vw;
+    width: 40vw;
+    height: 7vh;
+  }
+
+  .icon {
+    width: 5vw;
+  }
+
+  .btn2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    border-radius: 7vw;
+    border: none;
+    background-color: #223D7F;
+    font-size: 5vw;
+    width: 44vw;
+    height: 7vh;
+  }
+
+
+}
