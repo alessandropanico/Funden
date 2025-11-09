@@ -45,8 +45,8 @@ SwiperCore.use([Pagination]);
     imports: [CommonModule, PromptsListComponent, OffersSwiperComponent, UniquesListComponent, TopUpCreditComponent, PipesModule, InviaCreditoComponent]
 })
 export class TopUpBalanceComponent implements OnInit, AfterViewInit {
-  @Input() showTopUpBalance = true;
 
+  @Input() showTopUpBalance = true;
   @Output() propagar = new EventEmitter<boolean>();
 
   showLogout = false;
